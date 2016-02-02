@@ -1,5 +1,3 @@
-# mon_ak_2016
-
 # Każdy raport powinien się składać z:
 
 Nazwa testu
