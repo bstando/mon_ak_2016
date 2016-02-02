@@ -34,4 +34,3 @@ Dla pojedynczego systemu
 6. Podsumowanie dla kilku systemów
     W tej części należy wskazać, który system miał najlepszy rezultat (porównując średnie), a który najgorsze.
     Musi też się znaleźć wykres, który będzie zawierał porównanie średnich wybranego parametru dla kilku systemów (najlepiej 3, co najmniej 2)
-    Wizualnie ma być podobny do załączonego przykładu
