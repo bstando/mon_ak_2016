@@ -29,8 +29,391 @@
 </ul>
 </div>
 <div id="main">
-<p>Do wypełnienia</p>
-<!-- Tu raporty -->
+<h2>Grafika - test glmark2</h2>
+<h3>Wstęp</h3>
+<p>
+  Glmark2 jest to program do testowania wydajności renderowania grafiki na danym sprzęcie i systemie.
+  Program bada ile system jest w stanie wyrenderować klatek na sekundę w kilkunastu różnych testach oraz w
+  pojedynczym teście jest pokazuje czas wyrenderowania jednej klatki. Program zwraca średnią arytmetyczną
+  klatek na sekundę wszystkich wykonanych testów.
+</p>
+<h3>Procedura testowa</h3>
+<p>
+  Program glmark2 jest uruchamiany 2 razy. Raz w trybie okna dla rozdzielczości 640x480 oraz
+  drugi raz w trybie pełnoekranowym. Opcje:
+  <ul>
+    <li><b>-f plik</b> - oznacza by glmark2 wykonał wszystkie testy, które zostałypodane w tym pliku oraz żeby
+      policzył z nich średnią liczbę klatek na sekundę.</li>
+    <li><b>-s WxH</b> - uruchamia testy w trybie okna o rozmiarach W i H</li>
+  </ul> Parametr
+</p>
+
+<h3>Raport dla systemu Linux</h3>
+
+<h4>Wyniki ogólne</h4>
+<table>
+  <tr><th></th><th>Tryb pełnoekranowy</th><th>Tryb okna</th></tr>
+  <tr><th>Średnia arytmetyczna	 </th><td>174	 </td><td>894 </td></tr>
+  <tr><th>Odchylenie standardowe </th><td>22	 </td><td>66  </td></tr>
+  <tr><th>Wartość maksymalna	   </th><td>185	 </td><td>975 </td></tr>
+  <tr><th>Wartość minimalna	     </th><td>123	 </td><td>790 </td></tr>
+</table>
+
+<h4>Tabela - wyniki szczegółowe</h4>
+<table>
+  <tr><th></th><th>Tryb pełnoekranowy</th><th>Tryb okna</th></tr>
+  <tr><th>labc192</th><td >180</td><td class="worst">790</td></tr>
+  <tr><th>labc193</th><td class="worst">123</td><td class="best">975</td></tr>
+  <tr><th>labc194</th><td>183</td><td>915</td></tr>
+  <tr><th>labc195</th><td>183</td><td>891</td></tr>
+  <tr><th>labc197</th><td>184</td><td>894</td></tr>
+  <tr><th>labc198</th><td class="best">185</td><td>965</td></tr>
+  <tr><th>labc199</th><td>184</td><td>832</td></tr>
+</table>
+
+<h4>Podsumowanie</h4>
+<p>
+  Najgorzej wypadł komputer labc192, a najlepiej komputer labc198.
+</p>
+
+<h2>Grafika - test glxgears</h2>
+<h3>Wstęp</h3>
+<p>
+  Glxgears jest to program do testowania wydajności renderowania grafiki na danym sprzęcie i systemie. Jest on dołączany
+  z otwartoźródłowymi sterownikami do karty graficznej(mesa). Program wyświetla animacje na której poruszają się 3 koła
+  zębate i co 5 sekund mierzy ilość wygenerowanych w tym czasie klatek oraz liczbę klatek na sekundę. Testy będą uruchamiane na
+  systemach Linux, BSD i Windows.
+</p>
+<h3>Procedura testowa</h3>
+<p>
+  Będą uruchomione 4 testy. Każdy z nich będzie trwał 10 sek. Testy będą kolejno uruchamiane w trybie okna dla
+  rozdzielczości 320x240, 640x480, 1024x768 oraz trybie pełnoekranowym w systemie Linux i BSD. Na Windows będzie uruchamiany
+  tylko w oknie o rozdzielczości 320x240. Opcje:
+  <ul>
+    <li><b>-fullscreen</b> - uruchamia program w trybie pełnoekranowym</li>
+    <li><b>-geometry WxH</b> - uruchamia program w trybie okna on rozmiarach W i H</li>
+  </ul>
+</p>
+
+<h3>Raport dla systemu Linux</h3>
+
+<table>
+  <tr><th></th><th>320x240</th><th>640x480</th><th>1024x768</th><th>Tryb pełnoekranowy</th></tr>
+<tr><th>Średnia arytmetyczna	</th>   <td>1239</td><td>	451	</td><td>  166	</td> <td> 195</td></tr>
+<tr><th>Odchylenie standardowe</th>	  <td>267	</td><td>  97	</td><td>  33	 </td> <td>16</td></tr>
+<tr><th>Wartość maksymalna	  </th>   <td>1670</td><td>	591	</td><td>  226	</td> <td> 221</td></tr>
+<tr><th>Wartość minimalna	    </th>   <td>908	</td><td>  310</td><td>	  127</td>	<td>  177</td></tr>
+</table>
+
+<h4>Szczegółowe wyniki</h4>
+<table>
+  <tr><th></th><th>320x240</th><th>640x480</th><th>1024x768</th><th>Tryb pełnoekranowy</th></tr>
+  <tr><th>labc192</th>	<td>1007</td>	<td>376	</td><td>171	</td><td class="worst">177</td></tr>
+  <tr><th>labc193</th>	<td>1362</td>	<td class="best">591	</td><td>147	</td><td class="best">221</td></tr>
+  <tr><th>labc194</th>	<td>1368</td>	<td>456	</td><td class="worst">127	</td><td>216</td></tr>
+  <tr><th>labc195</th>	<td class="worst">908	</td> <td class="worst">310</td><td>189  </td><td>186</td></tr>
+  <tr><th>labc197</th>	<td class="best">1670</td>	<td>543	</td><td>137	</td><td>193</td></tr>
+  <tr><th>labc198</th>	<td>1327</td>	<td>482	</td><td>166	</td><td>188</td></tr>
+  <tr><th>labc199</th>	<td>1035</td>	<td>405	</td><td class="best">226	</td><td>186</td></tr>
+
+</table>
+
+<h3>Podsumowanie</h3>
+<p>
+  Najgorzej wypadł komputer labc195, a najlepiej komputer labc193.
+</p>
+
+<h3>Raport dla systemu FreeBSD</h3>
+
+<table>
+  <tr><th></th><th>320x240</th><th>640x480</th><th>1024x768</th><th>Tryb pełnoekranowy</th></tr>
+  <tr><th>Średnia arytmetyczna	 </th><td> 1346</td><td>	423	 </td><td> 189	 </td> <td>199</td></tr>
+  <tr><th>Odchylenie standardowe</th><td>	338	</td><td>  146	</td><td>  47	 </td><td> 35</td></tr>
+  <tr><th>Wartość maksymalna	   </th><td> 1786</td><td>	551	 </td><td> 235	 </td> <td>234</td></tr>
+  <tr><th>Wartość minimalna	    </th><td>  985</td><td>	  265</td><td>	  135</td>	  <td>160</td></tr>
+</table>
+
+<h4>Szczegółowe wyniki</h4>
+<table>
+  <tr><th></th><th>320x240</th><th>640x480</th><th>1024x768</th><th>Tryb pełnoekranowy</th></tr>
+  <tr><th>labc192</th><td class="best">1786</td><td>	529	</td><td>  210	</td><td> 223</td></tr>
+  <tr><th>labc193</th><td class="worst">985	</td><td>  265</td><td class="worst">	 135</td><td class="worst">	160</td></tr>
+  <tr><th>labc194</th><td>1001</td><td class="worst">	265	</td><td>  144	</td><td> 167</td></tr>
+  <tr><th>labc195</th><td>1005</td><td>	270	</td><td>  140	</td><td class="worst"> 160</td></tr>
+  <tr><th>labc197</th><td>1549</td><td>	533	</td><td>  227	</td><td> 219</td></tr>
+  <tr><th>labc198</th><td>1527</td><td class="best">	551	</td><td>  234	</td><td class="best"> 234</td></tr>
+  <tr><th>labc199</th><td>1575</td><td>	548	</td><td class="best">  235	</td><td> 232</td></tr>
+</table>
+
+<h3>Podsumowanie</h3>
+<p>
+  Źle wypadł komputer labc193, który wypadł najgorzej aż w 3 róznych testach. Najlepiej wyszedł komputer labc198, który
+  dobrze wypadł w 2 testach, a w innych niewiele mu brakowało tego żeby być najlepszym.
+</p>
+
+<h3>Raport dla systemu Windows</h3>
+<table>
+  <tr><th></th><th>320x240</th></tr>
+  <tr><th>Średnia arytmetyczna	  </th><td>6143</td></tr>
+  <tr><th>Odchylenie standardowe	</th><td>562</td></tr>
+  <tr><th>Wartość maksymalna	    </th><td>6707</td></tr>
+  <tr><th>Wartość minimalna	      </th><td>5068</td></tr>
+
+</table>
+
+<h4>Szczegółowe wyniki</h4>
+<table>
+  <tr><th></th><th>320x240</th></tr>
+  <tr><th>labc192</th>	<td>5788</td></tr>
+  <tr><th>labc193</th>	<td>6493</td></tr>
+  <tr><th>labc194</th>	<td class="worst">5068</td></tr>
+  <tr><th>labc195</th>	<td>6091</td></tr>
+  <tr><th>labc197</th>	<td>6361</td></tr>
+  <tr><th>labc198</th>	<td class="best">6707</td></tr>
+  <tr><th>labc199</th>	<td>6494</td></tr>
+</table>
+
+<h3>Podsumowanie</h3>
+<p>
+  Najgorzej wypadł komputer labc194, a najlepiej komputer labc198.
+</p>
+
+<h3>Podsumowanie kilku systemów</h3>
+<h4>Wykres</h4>
+
+<p class="charts">
+  <img src="res/grafika/glxgears.jpg"/>
+</p>
+<h4>Podsumowanie</h4>
+<p>
+  Z wykresu można zauważyć, że na systemach Linux i FreeBSD wyniki są podobne. Na systemie Windows wynik jest 3 razy
+  ponieważ implementacja tego programu się może różnić od implementacji na systemach unix. Program na system windows
+  nie miał możliwości ustawienia rozmiaru okna czy trybu pełnoekranowego.
+</p>
+
+<h2>Obliczenia - test odwracania macierzy</h2>
+<h3>Wstęp</h3>
+<p>
+  W testach będzie badany czas wykonywania się procedury odwracania macierzy. Do testów zostały wykorzystane macierze,
+  zapisane w postaci matrix market. Program ten wykorzystuje biblioteki m. in. scipy oraz numpy.
+  W scipy zawarte są procedury odwracania i mnożenia macierzy. Numpy, która pozwala tworzyć macierze oraz
+  wykonywać efektywnie operacje na nich. Testy zostaną przeprowadzone na systemach Linux, BSD i Windows.
+</p>
+<h3>Procedura testowa</h3>
+<p>
+  Będą uruchamiane 2 testy. Program przyjmuje jako parametr macierze na których będzie wykonywać obliczenia.
+  Na systemach Linux i BSD będą odwrócone dwie macierze. Na systemie Windows będzie odwrócona jedna macierz.
+</p>
+
+<h3>Raport dla systemu Linux</h3>
+
+<table>
+  <tr><th></th><th>Odwracanie macierzy#1 (w sek)</th><th>Odwracanie macierzy#2 (w sek)</th></tr>
+  <tr><th>Średnia arytmetyczna	 </th>    <td>0,0597</td>	 <td> 6,641	</td>   </tr>
+  <tr><th>Odchylenie standardowe</th>	   <td>0,0262</td>	 <td> 0,233	</td>   </tr>
+  <tr><th>Wartość maksymalna	   </th>    <td>0,1	  </td>  <td>7,039	 </td>  </tr>
+  <tr><th>Wartość minimalna	    </th>    <td> 0,04	</td>  <td>  6,447</td>	  </tr>
+</table>
+
+<h4>Szczegółowe wyniki</h4>
+<table>
+<tr><th></th><th>Odwracanie macierzy#1 (w sek)</th><th>Odwracanie macierzy#2 (w sek)</th></tr>
+<tr><th>labc192</th>	<td class="worst">0,1	 </td><td>   6,904</td></tr>
+<tr><th>labc193</th>	<td class="best">0,04	</td><td class="worst">  7,039</td></tr>
+<tr><th>labc194</th>	<td>0,044</td><td class="best">	  6,447</td></tr>
+<tr><th>labc195</th>	<td>0,096</td><td>	  6,466</td></tr>
+<tr><th>labc197</th>	<td>0,046</td><td>	  6,599</td></tr>
+<tr><th>labc198</th>	<td>0,047</td><td>	  6,522</td></tr>
+<tr><th>labc199</th>	<td>0,045</td><td>	  6,515</td></tr>
+</table>
+
+<h3>Podsumowanie</h3>
+<p>
+  Najgorzej wypadł komputer labc192, a najlepiej komputer labc194.
+</p>
+
+<h3>Raport dla systemu FreeBSD</h3>
+
+<table>
+<tr><th></th><th>Odwracanie macierzy#1 (w sek)</th><th>Odwracanie macierzy#2 (w sek)</th></tr>
+<tr><th>Średnia arytmetyczna	 </th><td> 0,096	</td><td>  10,421</td></tr>
+<tr><th>Odchylenie standardowe</th><td>	0,016	</td><td>     2,251</td></tr>
+<tr><th>Wartość maksymalna	   </th><td> 0,125	</td><td>  13,022</td></tr>
+<tr><th>Wartość minimalna	    </th><td>  0,079</td><td>	    8,367</td></tr>
+
+</table>
+
+<h4>Szczegółowe wyniki</h4>
+<table>
+<tr><th></th><th>Odwracanie macierzy#1 (w sek)</th><th>Odwracanie macierzy#2 (w sek)</th></tr>
+<tr><th>labc192</th>	<td class="worst">0,125</td><td class="best">	 8,367</td></tr>
+<tr><th>labc193</th>	<td>0,08	</td><td> 8,716</td></tr>
+<tr><th>labc194</th>	<td class="best">0,079</td><td>	 8,663</td></tr>
+<tr><th>labc195</th>	<td>0,085</td><td>	 8,741</td></tr>
+<tr><th>labc197</th>	<td>0,105</td><td class="worst">	 13,02</td></tr>
+<tr><th>labc198</th>	<td>0,102</td><td>	 12,55</td></tr>
+<tr><th>labc199</th>	<td>0,101</td><td>	 12,88</td></tr>
+</table>
+
+<h3>Podsumowanie</h3>
+<p>
+  W obu testach nienajlepiej wyszedł komputer labc197. Całkiem szybko się wykonały testy na komputerze labc194.
+</p>
+
+<h3>Raport dla systemu Windows</h3>
+
+<table>
+  <tr><th></th><th>Odwracanie macierzy (w sek)</th></tr>
+
+  <tr><th>Średnia arytmetyczna	 </th> <td> 0,422</td></tr>
+  <tr><th>Odchylenie standardowe</th>	<td> 0,062</td></tr>
+  <tr><th>Wartość maksymalna	   </th> <td> 0,501</td></tr>
+  <tr><th>Wartość minimalna	    </th> <td>  0,315</td></tr>
+
+</table>
+
+<h4>Szczegółowe wyniki</h4>
+<table>
+  <tr><th></th><th>Odwracanie macierzy (w sek)</th></tr>
+  <tr><th>labc192</th>	<td class="best">0,315</td></tr>
+  <tr><th>labc193</th>	<td>0,412</td></tr>
+  <tr><th>labc194</th>	<td>0,375</td></tr>
+  <tr><th>labc195</th>	<td>0,477</td></tr>
+  <tr><th>labc197</th>	<td>0,431</td></tr>
+  <tr><th>labc198</th>	<td class="worst">0,501</td></tr>
+  <tr><th>labc199</th>	<td>0,444</td></tr>
+</table>
+
+<h3>Podsumowanie</h3>
+<p>
+  Najgorzej wypadł komputer labc198, a najlepiej komputer labc192.
+</p>
+
+<h3>Podsumowanie kilku systemów</h3>
+
+<h4>Wykres</h4>
+
+<p class="charts">
+  <img src="res/grafika/reverse_matrix.jpg"/>
+</p>
+<h4>Podsumowanie</h4>
+<p>
+  W przypadku odwracania pierwszej macierzy wyniki systemów Linux i FreeBSD nie różnią się tak jak w przypadku glxgears.
+  Na systemie windows odwracanie poszło odrobine wolniej niż na innych systemach. W przypadku odwracania większej macierzy
+  system Linux poradził sobie lepiej niż FreeBSD. Na systemie Windows nie odwracano drugiej macierzy.
+</p>
+
+<h2>Obliczenia - test mnożenia macierzy</h2>
+<h3>Wstęp</h3>
+<p>
+  W testach będzie badany czas wykonywania się procedury mnożenia macierzy. Do testów zostały wykorzystane macierze,
+  zapisane w postaci matrix market. Program ten wykorzystuje biblioteki m. in. scipy oraz numpy.
+  W scipy zawarte są procedury odwracania i mnożenia macierzy. Numpy, która pozwala tworzyć macierze oraz
+  wykonywać efektywnie operacje na nich. Testy zostaną przeprowadzone na systemach Linux, BSD i Windows.
+</p>
+<h3>Procedura testowa</h3>
+<p>
+  Będzie uruchamiany 1 test. Program przyjmuje jako parametr macierze na których będzie wykonywać obliczenia.
+</p>
+
+
+<h3>Raport dla systemu Linux</h3>
+
+<table>
+  <tr><th></th><th>Mnożenie macierzy (w sek)</th></tr>
+  <tr><th>Średnia arytmetyczna	 </th>    <td>0,011</td>	    </tr>
+  <tr><th>Odchylenie standardowe</th>	   <td>0,001</td>	    </tr>
+  <tr><th>Wartość maksymalna	   </th>    <td>0,015 </td>    </tr>
+  <tr><th>Wartość minimalna	    </th>    <td> 0,011	</td>  	  </tr>
+</table>
+
+<h4>Szczegółowe wyniki</h4>
+<table>
+<tr><th></th><th>Mnożenie macierzy (w sek)</th></tr>
+<tr><th>labc192</th>	<td class="best">0,011	 </td></tr>
+<tr><th>labc193</th>	<td class="worst">0,015	</td></tr>
+<tr><th>labc194</th>	<td class="best">0,011</td></tr>
+<tr><th>labc195</th>	<td class="best">0,011</td></tr>
+<tr><th>labc197</th>	<td>0,012</td></tr>
+<tr><th>labc198</th>	<td>0,012</td></tr>
+<tr><th>labc199</th>	<td class="best">0,011</td></tr>
+</table>
+
+<h3>Podsumowanie</h3>
+<p>
+  Były aż 4 najlepsze komputery z wynikiem 0,011. Jedynie wypadł słabo komputer labc193.
+</p>
+
+<h3>Raport dla systemu FreeBSD</h3>
+
+<table>
+<tr><th></th><th>Mnożenie macierzy (w sek)</th></tr>
+<tr><th>Średnia arytmetyczna	 </th><td> 0,32	</td></tr>
+<tr><th>Odchylenie standardowe</th><td>	0,018	</td></tr>
+<tr><th>Wartość maksymalna	   </th><td> 0,361	</td></tr>
+<tr><th>Wartość minimalna	    </th><td>  0,307</td></tr>
+
+</table>
+
+<h4>Szczegółowe wyniki</h4>
+<table>
+<tr><th></th><th>Mnożenie macierzy (w sek)</th></tr>
+<tr><th>labc192</th>	<td>0,318</td></tr>
+<tr><th>labc193</th>	<td class="best">0,307	</td></tr>
+<tr><th>labc194</th>	<td>0,31</td></tr>
+<tr><th>labc195</th>	<td class="worst">0,361</td></tr>
+<tr><th>labc197</th>	<td>0,321</td></tr>
+<tr><th>labc198</th>	<td>0,312</td></tr>
+<tr><th>labc199</th>	<td>0,311</td></tr>
+</table>
+
+<h3>Podsumowanie</h3>
+<p>
+  Najgorzej wypadł komputer labc193, a najlepiej komputer labc195.
+</p>
+
+<h3>Raport dla systemu Windows</h3>
+
+<table>
+  <tr><th></th><th>Mnożenie macierzy (w sek)</th></tr>
+
+  <tr><th>Średnia arytmetyczna	 </th> <td> 0,142</td></tr>
+  <tr><th>Odchylenie standardowe</th>	<td> 0,012</td></tr>
+  <tr><th>Wartość maksymalna	   </th> <td> 0,157</td></tr>
+  <tr><th>Wartość minimalna	    </th> <td>  0,121</td></tr>
+
+</table>
+
+<h4>Szczegółowe wyniki</h4>
+<table>
+  <tr><th></th><th>Mnożenie macierzy (w sek)</th></tr>
+  <tr><th>labc192</th>	<td>0,148</td></tr>
+  <tr><th>labc193</th>	<td>0,136</td></tr>
+  <tr><th>labc194</th>	<td>0,145</td></tr>
+  <tr><th>labc195</th>	<td>0,154</td></tr>
+  <tr><th>labc197</th>	<td class="worst">0,157</td></tr>
+  <tr><th>labc198</th>	<td class="best">0,121</td></tr>
+  <tr><th>labc199</th>	<td>0,134</td></tr>
+</table>
+<h3>Podsumowanie</h3>
+<p>
+  Najgorzej wypadł komputer labc197, a najlepiej komputer labc198.
+</p>
+
+<h3>Podsumowanie kilku systemów</h3>
+<h4>Wykres</h4>
+
+<p class="charts">
+  <img src="res/grafika/multiply_matrix.jpg"/>
+</p>
+<h4>Opis</h4>
+<p>
+  Z wykresu wynika, że mnożenie macierzy wypadło na systemie Windows 3 razy wolniej,
+  a na systemie FreeBSD 6 razy wolniej niż na systemi Linux, ale przyczyną może
+  być zbyt krótki czas wykonywania obliczeń i różnice te mogą być czystym przypadkiem.
+</p>
+
+
 </div>
 </body>
 </html>
