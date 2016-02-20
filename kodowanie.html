@@ -29,7 +29,880 @@
 </ul>
 </div>
 <div id="main">
-<p>Do wypełnienia</p>
+
+<!-- Spis treści -->
+<ul class="info">
+<li><b>Spis treści</b></li>
+<li><a href="#lame">1 LAME</a>
+<ul class="int">
+<li><a href="#lame_linux">1.1 Linux</a></li>
+<li><a href="#lame_win">1.2 Windows</a></li>
+<li><a href="#lame_bsd">1.3 FreeBSD</a></li>
+<li><a href="#lame_summ">1.4 Podsumowanie</a></li>
+</ul>
+</li>
+<li><a href="#flac">2 FLAC</a>
+</li>
+<li><a href="#x264">3 x264</a>
+</li>
+<li><a href="#ffmpeg">4 FFMPEG</a>
+<ul class="int">
+<li><a href="#ffmpeg_linux">4.1 Linux</a></li>
+<li><a href="#ffmpeg_bsd">4.2 FreeBSD</a></li>
+<li><a href="#ffmpeg_summ">4.3 Podsumowanie</a></li>
+</ul>
+</li>
+</ul>
+<!-- Koniec spisu treści -->
+
+<h2 id="lame">Lame</h2>
+	  <h3>Wstęp</h3>
+	  <p>
+	    Test ten pozwala zmierzyć wydajność kompresji plików audio w formacie <i>wav</i> do formatu <i>mp3</i>
+	  </p>
+	  <h3>Procedura testowa</h3>
+	  <p>
+	    Testy przeprowadzano programem <a href="http://lame.sourceforge.net/">lame</a> w wersji 3.99.5 na pliku <a href="http://al.wor.free.fr/cd/2_13-wav.htm">http://al.wor.free.fr/cd/2_13-wav.htm</a> z opcją -V2 (wysoka jakość). Mierzony jest czas kompresji. Im mniejszy czas kompresji, tym lepiej
+	  </p>
+	  <h3 id="lame_linux">Wynik dla systemu Linux</h3>
+	  <h4>Tabela - wyniki ogólne</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas kompresji (w sekundach)
+		</th>
+	      </tr>
+	      <tr>
+		<th>
+		  Średnia arytmetyczna
+		</th>
+		<td>
+		  4,985
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Odchylenie standardowe
+		</th>
+		<td>
+		  0,100
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość maksymalna
+		</th>
+		<td>
+		  5,137
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość minimalna
+		</th>
+		<td>
+		  4,895
+		</td>
+	      </tr>
+	    </table>
+	  <h4>Tabela - wyniki szczegółowe</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas kompresji (w sekundach)
+		</th>
+	      </tr>
+	      <tr>
+		<th>
+		 labc192
+		</th>
+		<td class="worst">
+		  5,137
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc193
+		</th>
+		<td>
+		  4,911
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		 labc194
+		</th>
+		<td>
+		  4,950
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc195
+		</th>
+		<td>
+		 5,034
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc197
+		</th>
+		<td  class="worst">
+		 -
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc198
+		</th>
+		<td  class="worst">
+		 -
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc199
+		</th>
+		<td  class="best">
+		 4,895
+		</td>
+	      </tr>
+	    </table>
+	  <h3>Podsumowanie</h3>
+	  <p>
+	    Najlepiej z zadaniem poradził sobie komputer labc199 uzyskując czas 4,895s. Najgorzej poradził sobie komputer labc192 uzyskując czas 5,137s. Różnice te są jednak małe (niskie odchylenie standardowe) i można przyjąć, że wszystkie komputery poradziły sobie z zadaniem róznie dobrze.
+	  </p>
+	
+	  <h3 id="lame_win">Wynik dla systemu Windows</h3>
+	  <h4>Tabela - wyniki ogólne</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas kompresji (w sekundach)
+		</th>
+	      </tr>
+	      <tr>
+		<th>
+		  Średnia arytmetyczna
+		</th>
+		<td>
+		  5,4215
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Odchylenie standardowe
+		</th>
+		<td>
+		  0,051
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość maksymalna
+		</th>
+		<td>
+		  5,475
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość minimalna
+		</th>
+		<td>
+		  5,356
+		</td>
+	      </tr>
+	    </table>
+	  <h4>Tabela - wyniki szczegółowe</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas kompresji (w sekundach)
+		</th>
+	      </tr>
+	      <tr>
+		<th>
+		 labc192
+		</th>
+		<td>
+		  5,394
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc193
+		</th>
+		<td>
+		  5,465
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		 labc194
+		</th>
+		<td class="worst">
+		  5,475
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc195
+		</th>
+		<td>
+		 5,381
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc197
+		</th>
+		<td  class="worst">
+		 -
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc198
+		</th>
+		<td>
+		 5,458
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc199
+		</th>
+		<td  class="best">
+		 5,356
+		</td>
+	      </tr>
+	    </table>
+	  <h3>Podsumowanie</h3>
+	  <p>
+	    Najlepiej z zadaniem poradził sobie komputer labc199 uzyskując czas 5,356s. Najgorzej poradził sobie komputer labc192 uzyskując czas 5,475s. Różnice te są jednak małe i można przyjąć, że wszystkie komputery poradziły sobie z zadaniem róznie dobrze 
+	  </p>
+	
+          <h3 id="lame_bsd">Wynik dla systemu FreeBSD</h3>
+	  <h4>Tabela - wyniki ogólne</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas kompresji (w sekundach)
+		</th>
+	      </tr>
+	      <tr>
+		<th>
+		  Średnia arytmetyczna
+		</th>
+		<td>
+		  6,750
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Odchylenie standardowe
+		</th>
+		<td>
+		  0,888
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość maksymalna
+		</th>
+		<td>
+		  7,779
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość minimalna
+		</th>
+		<td>
+		  5,987
+		</td>
+	      </tr>
+	    </table>
+	  <h4>Tabela - wyniki szczegółowe</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas kompresji (w sekundach)
+		</th>
+	      </tr>
+	      <tr>
+		<th>
+		 labc192
+		</th>
+		<td class="best">
+		  5,987
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc193
+		</th>
+		<td>
+		  6,102
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		 labc194
+		</th>
+		<td>
+		 6,002
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc195
+		</th>
+		<td>
+		 6,069
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc197
+		</th>
+		<td>
+		 7,628
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc198
+		</th>
+		<td class="worst">
+		 7,779
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc199
+		</th>
+		<td>
+		 7,685
+		</td>
+	      </tr>
+	    </table>
+	  <h3>Podsumowanie</h3>
+	  <p>
+	    Najlepiej z zadaniem poradził sobie komputer labc192 uzyskując czas 5,987s. Najgorzej poradził sobie komputer labc198 uzyskując czas 7,779s. Różnice te są całkiem spore (odchylenie wynosi prawie 0,9s) i w przypadku większych plików te różnice będą się powiększać. 
+	  </p>
+	  <h3 id="lame_summ">Podsumowanie kilku systemów</h3>
+	  <p>
+	    Poniżej zostały przedstawiony wykres średniego czasu kompresji w zależności od użytego systemu operacyjnego na danej maszynie.
+	  </p>
+	  <p class="charts">
+	    <img src="res/kodowanie/lame.jpg"/>
+	  </p>
+          <p>Jak widać najlepsze czasy kompresji uzyskano na systemie Linux. Zaraz za nim plasuje się system Windows. Najgorzej wypadł zaś system FreeBSD.</p>
+
+<h2 id="flac">Flac</h2>
+	  <h3>Wstęp</h3>
+	  <p>
+	    Test ten pozwala zmierzyć wydajność kompresji plików audio w formacie <i>wav</i> do formatu <i>flac</i>
+	  </p>
+	  <h3>Procedura testowa</h3>
+	  <p>
+	    Testy przeprowadzano programem <a href="https://xiph.org/flac/index.html">flac</a> w wersji 1.3.1 na pliku <a href="http://al.wor.free.fr/cd/2_13-wav.htm">http://al.wor.free.fr/cd/2_13-wav.htm</a>. Mierzony jest czas kompresji. Im mniejszy czas kompresji, tym lepiej
+	  </p>
+	  <h3>Wynik dla systemu Linux</h3>
+	  <h4>Tabela - wyniki ogólne</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas kompresji (w sekundach)
+		</th>
+	      </tr>
+	      <tr>
+		<th>
+		  Średnia arytmetyczna
+		</th>
+		<td>
+		  1,523
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Odchylenie standardowe
+		</th>
+		<td>
+		  0,052
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość maksymalna
+		</th>
+		<td>
+		  1,622
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość minimalna
+		</th>
+		<td>
+		  1,501
+		</td>
+	      </tr>
+	    </table>
+	  <h4>Tabela - wyniki szczegółowe</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas kompresji (w sekundach)
+		</th>
+	      </tr>
+	      <tr>
+		<th>
+		 labc192
+		</th>
+		<td>
+		  1,506
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc193
+		</th>
+		<td>
+		  1,510
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		 labc194
+		</th>
+		<td class="worst">
+		  1,622
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc195
+		</th>
+		<td>
+		 1,507
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc197
+		</th>
+		<td  class="worst">
+		 -
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc198
+		</th>
+		<td  class="worst">
+		 -
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc199
+		</th>
+		<td  class="best">
+		 1,501
+		</td>
+	      </tr>
+	    </table>
+	  <h3>Podsumowanie</h3>
+	  <p>
+	    Najlepiej z zadaniem poradził sobie komputer labc199 uzyskując czas 1,501s. Najgorzej poradził sobie komputer labc194 uzyskując czas 1,622s. Różnice te są jednak małe (niskie odchylenie standardowe) i można przyjąć, że wszystkie komputery poradziły sobie z zadaniem róznie dobrze.
+	  </p>
+	
+<h2 id="x264">x264</h2>
+	  <h3>Wstęp</h3>
+	  <p>
+	    Test ten pozwala zmierzyć wydajność kompresji plików wideo w formacie <i>y4m</i> do formatu <i>mkv</i>
+	  </p>
+	  <h3>Procedura testowa</h3>
+	  <p>
+	    Testy przeprowadzano programem <a href="http://www.videolan.org/developers/x264.html">x264</a> w wersji 0.148.x na pliku <a href="https://media.xiph.org/video/derf/y4m/football_422_ntsc.y4m">https://media.xiph.org/video/derf/y4m/football_422_ntsc.y4m</a>. Mierzony jest czas kompresji. Im mniejszy czas kompresji, tym lepiej
+	  </p>
+	  <h3>Wynik dla systemu Linux</h3>
+	  <h4>Tabela - wyniki ogólne</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas kompresji (w sekundach)
+		</th>
+	      </tr>
+	      <tr>
+		<th>
+		  Średnia arytmetyczna
+		</th>
+		<td>
+		  5,9608
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Odchylenie standardowe
+		</th>
+		<td>
+		  0,161
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość maksymalna
+		</th>
+		<td>
+		  6,179
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość minimalna
+		</th>
+		<td>
+		  5,765
+		</td>
+	      </tr>
+	    </table>
+	  <h4>Tabela - wyniki szczegółowe</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas kompresji (w sekundach)
+		</th>
+	      </tr>
+	      <tr>
+		<th>
+		 labc192
+		</th>
+		<td class="best">
+		  5,765
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc193
+		</th>
+		<td>
+		  5,848
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		 labc194
+		</th>
+		<td class="worst">
+		  6,179
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc195
+		</th>
+		<td>
+		 6,027
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc197
+		</th>
+		<td  class="worst">
+		 -
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc198
+		</th>
+		<td  class="worst">
+		 -
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc199
+		</th>
+		<td>
+		 5,985
+		</td>
+	      </tr>
+	    </table>
+	  <h3>Podsumowanie</h3>
+	  <p>
+	    Najlepiej z zadaniem poradził sobie komputer labc192 uzyskując czas 5,765s. Najgorzej poradził sobie komputer labc194 uzyskując czas 6,179s. Różnice te są jednak małe (niskie odchylenie standardowe) i można przyjąć, że wszystkie komputery poradziły sobie z zadaniem róznie dobrze.
+	  </p>
+<h2 id="ffpmeg">Ffmpeg</h2>
+	  <h3>Wstęp</h3>
+	  <p>
+	    Test ten pozwala zmierzyć wydajność kompresji plików wideo w formacie <i>y4m</i> do formatu <i>avi</i>
+	  </p>
+	  <h3>Procedura testowa</h3>
+	  <p>
+	    Testy przeprowadzano programem <a href="http://johnvansickle.com/ffmpeg/">ffmpeg</a> w wersji 2.8.1 na pliku <a href="https://media.xiph.org/video/derf/y4m/football_422_ntsc.y4m">https://media.xiph.org/video/derf/y4m/football_422_ntsc.y4m</a>. Mierzony jest czas kompresji. Im mniejszy czas kompresji, tym lepiej
+	  </p>
+	  <h3 id="ffmpeg_linux">Wynik dla systemu Linux</h3>
+	  <h4>Tabela - wyniki ogólne</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas kompresji (w sekundach)
+		</th>
+	      </tr>
+	      <tr>
+		<th>
+		  Średnia arytmetyczna
+		</th>
+		<td>
+		  0,903
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Odchylenie standardowe
+		</th>
+		<td>
+		  0,293
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość maksymalna
+		</th>
+		<td>
+		  1,426
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość minimalna
+		</th>
+		<td>
+		 0,729
+		</td>
+	      </tr>
+	    </table>
+	  <h4>Tabela - wyniki szczegółowe</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas kompresji (w sekundach)
+		</th>
+	      </tr>
+	      <tr>
+		<th>
+		 labc192
+		</th>
+		<td class="best">
+		  0,729
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc193
+		</th>
+		<td>
+		  0,782
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		 labc194
+		</th>
+		<td class="worst">
+		  1,426
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc195
+		</th>
+		<td>
+		 0,789
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc197
+		</th>
+		<td  class="worst">
+		 -
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc198
+		</th>
+		<td  class="worst">
+		 -
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc199
+		</th>
+		<td>
+		 0,790
+		</td>
+	      </tr>
+	    </table>
+	  <h3>Podsumowanie</h3>
+	  <p>
+	    Najlepiej z zadaniem poradził sobie komputer labc192 uzyskując czas 0,729s. Najgorzej poradził sobie komputer labc194 uzyskując czas 1,426s. Można zauważyć, że prócz komputera labc194 wsystkie maszyny osiągnęły czasy poniżej 0,8s.
+	  </p>
+	  <h3 id="ffmpeg_bsd">Wynik dla systemu FreeBSD</h3>
+	  <h4>Tabela - wyniki ogólne</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas kompresji (w sekundach)
+		</th>
+	      </tr>
+	      <tr>
+		<th>
+		  Średnia arytmetyczna
+		</th>
+		<td>
+		  3,04
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Odchylenie standardowe
+		</th>
+		<td>
+		  2,66
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość maksymalna
+		</th>
+		<td>
+		  7,685
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość minimalna
+		</th>
+		<td>
+		 0,934
+		</td>
+	      </tr>
+	    </table>
+	  <h4>Tabela - wyniki szczegółowe</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas kompresji (w sekundach)
+		</th>
+	      </tr>
+	      <tr>
+		<th>
+		 labc192
+		</th>
+		<td>
+		  1,046
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc193
+		</th>
+		<td>
+		  1,114
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		 labc194
+		</th>
+		<td class="best">
+		  0,934
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc195
+		</th>
+		<td>
+		 1,172
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc197
+		</th>
+		<td>
+		 4,754
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc198
+		</th>
+		<td>
+		 4,598
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc199
+		</th>
+		<td class="worst">
+		 7,685
+		</td>
+	      </tr>
+	    </table>
+	  <h3>Podsumowanie</h3>
+	  <p>
+	    Najlepiej z zadaniem poradził sobie komputer labc194 uzyskując czas 0,934s. Najgorzej poradził sobie komputer labc199 uzyskując czas 7,685s. Warto tutaj wyszczególnić trzy wyraźnie różniące się od siebie grupy komputerów. Komputery labc192-labc195 osiągnęły wyniki oscylujące w granicach 1s. Ponad cztery dłużej razy to samo zadanie wykonywały komputery labc197 i labc198. Komputer labc199 potrzebował na to samo zadanie ponad siedem razy więcej czasu niż najlepsza grupa. Tak duże zróżnicowanie wyników powoduje, że uzyskane wyniki mogą być niemiarodajne. 
+	  </p>
+	 <h3 id="ffmpeg_summ">Podsumowanie kilku systemów</h3>
+	  <p>
+	    Poniżej zostały przedstawiony wykres średniego czasu kompresji w zależności od użytego systemu operacyjnego na danej maszynie.
+	  </p>
+	  <p class="charts">
+	    <img src="res/kodowanie/ffmpeg.jpg"/>
+	  </p>
+          <p>Jak widać najlepsze czasy kompresji uzyskano na systemie Linux. System FreeBSD uzyskał trzykrotnie gorszy rezultat.</p>
+
 <!-- Tu raporty -->
 </div>
 </body>

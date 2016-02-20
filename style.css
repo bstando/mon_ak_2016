@@ -56,18 +56,19 @@ background-color: #FF0000
 }
 
 .info {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
     margin-top: 15pt;
     margin-botton: 15pt;
     background-color: #C2D7ED;
-    text-align: center;
+    text-align: left;
     border: 2px dotted #3465A4;
     padding: 5pt;
-    width: 70%;
+    width: 25%;
 }
 
 .charts {
 	text-align: center;
+}
+
+.int {
+   margin-left: 20px;
 }
