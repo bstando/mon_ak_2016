@@ -9,6 +9,7 @@
 }
 
 #main {
+	line-height: 1.5em;
 	float: right;
 	width: 75%;
 	margin: 0 2.5%;
@@ -20,6 +21,7 @@ body {
 	padding: 0;}
 
 #links {
+	line-height: 1.1em;
 	position: fixed;
 }
 
