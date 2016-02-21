@@ -6,6 +6,8 @@
 	float: left;
 	width: 15%;
 	margin: 0 0 0 2.5%;
+	line-height: 1.1em;
+	position: fixed;
 }
 
 #main {
@@ -19,11 +21,6 @@ body {
 	font-family: verdana, sans-serif; 
 	margin: 0;
 	padding: 0;}
-
-#links {
-	line-height: 1.1em;
-	position: fixed;
-}
 
 /* ????? */
 ul#tests, ul.info {
