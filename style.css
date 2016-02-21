@@ -1,6 +1,10 @@
 #header {
-	background-color: #CCC; 
-	padding: 15px;}
+	background-image: url("res/header.jpeg");
+	height: 160px;
+	padding: 15px;
+	color: white;
+	text-indent: 50px;
+}
 
 #links {
 	float: left;
@@ -29,6 +33,11 @@ ul#tests li, ul.info li {
 	margin-top: 1em;
 }
 
+h2 {
+   border-bottom: 4px solid #663300;
+}
+
+
 table, th, td {
     font-size: 11pt;
     text-align: center;
@@ -49,6 +58,11 @@ img {
     margin: 2pt;
 }
 
+.underline
+{
+     border-bottom: 2px solid #663300;
+}
+
 .best {
 background-color: #00FF00
 }
@@ -59,7 +73,7 @@ background-color: #FF0000
 
 .info {
     margin-top: 15pt;
-    margin-botton: 15pt;
+    margin-bottom: 15pt;
     background-color: #C2D7ED;
     text-align: left;
     border: 2px dotted #3465A4;
