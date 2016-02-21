@@ -29,7 +29,43 @@
 </ul>
 </div>
 <div id="main">
-<h2>Grafika - test glmark2</h2>
+
+  <div style="margin-top: 20px;">
+    <!-- Spis treści -->
+    <ul class="info">
+    <li><b>Spis treści</b></li>
+    <li><a href="#glmark2">1 Glmark2</a>
+    </li>
+    <li><a href="#glxgears">2 Glxgears</a>
+      <ul class="int">
+      <li><a href="#glxgears_linux">2.1 Linux</a></li>
+      <li><a href="#glxgears_bsd">2.2 FreeBSD</a></li>
+      <li><a href="#glxgears_windows">2.3 Windows</a></li>
+      <li><a href="#glxgears_summ">2.4 Podsumowanie</a></li>
+      </ul>
+    </li>
+    <li><a href="#rev_mat">3 Odwracanie macierzy</a>
+      <ul class="int">
+        <li><a href="#rev_mat_linux">4.1 Linux</a></li>
+        <li><a href="#rev_mat_bsd">4.2 FreeBSD</a></li>
+        <li><a href="#rev_mat_windows">4.3 Windows</a></li>
+        <li><a href="#rev_mat_summ">4.4 Podsumowanie</a></li>
+      </ul>
+    </li>
+    <li><a href="#mlt_mat">4 Mnożenie macierzy</a>
+    <ul class="int">
+    <li><a href="#mlt_mat_linux">4.1 Linux</a></li>
+    <li><a href="#mlt_mat_bsd">4.2 FreeBSD</a></li>
+    <li><a href="#mlt_mat_windows">4.3 Windows</a></li>
+    <li><a href="#mlt_mat_summ">4.4 Podsumowanie</a></li>
+    </ul>
+    </li>
+    <li></li>
+    </ul>
+    <!-- Koniec spisu treści -->
+  </div>
+
+<h2 id="glmark2">Grafika - test glmark2</h2>
 <h3>Wstęp</h3>
 <p>
   Glmark2 jest to program do testowania wydajności renderowania grafiki na danym sprzęcie i systemie.
@@ -76,7 +112,7 @@
   Najgorzej wypadł komputer labc192, a najlepiej komputer labc198.
 </p>
 
-<h2>Grafika - test glxgears</h2>
+<h2 id="glxgears">Grafika - test glxgears</h2>
 <h3>Wstęp</h3>
 <p>
   Glxgears jest to program do testowania wydajności renderowania grafiki na danym sprzęcie i systemie. Jest on dołączany
@@ -95,7 +131,7 @@
   </ul>
 </p>
 
-<h3>Raport dla systemu Linux</h3>
+<h3 id="glxgears_linux">Raport dla systemu Linux</h3>
 
 <table>
   <tr><th></th><th>320x240</th><th>640x480</th><th>1024x768</th><th>Tryb pełnoekranowy</th></tr>
@@ -123,7 +159,7 @@
   Najgorzej wypadł komputer labc195, a najlepiej komputer labc193.
 </p>
 
-<h3>Raport dla systemu FreeBSD</h3>
+<h3 id="glxgears_bsd">Raport dla systemu FreeBSD</h3>
 
 <table>
   <tr><th></th><th>320x240</th><th>640x480</th><th>1024x768</th><th>Tryb pełnoekranowy</th></tr>
@@ -151,7 +187,7 @@
   dobrze wypadł w 2 testach, a w innych niewiele mu brakowało tego żeby być najlepszym.
 </p>
 
-<h3>Raport dla systemu Windows</h3>
+<h3 id="glxgears_windows">Raport dla systemu Windows</h3>
 <table>
   <tr><th></th><th>320x240</th></tr>
   <tr><th>Średnia arytmetyczna	  </th><td>6143</td></tr>
@@ -173,7 +209,7 @@
   <tr><th>labc199</th>	<td>6494</td></tr>
 </table>
 
-<h3>Podsumowanie</h3>
+<h3 id="glxgears_summ">Podsumowanie</h3>
 <p>
   Najgorzej wypadł komputer labc194, a najlepiej komputer labc198.
 </p>
@@ -191,7 +227,7 @@
   nie miał możliwości ustawienia rozmiaru okna czy trybu pełnoekranowego.
 </p>
 
-<h2>Obliczenia - test odwracania macierzy</h2>
+<h2 id="rev_mat">Obliczenia - test odwracania macierzy</h2>
 <h3>Wstęp</h3>
 <p>
   W testach będzie badany czas wykonywania się procedury odwracania macierzy. Do testów zostały wykorzystane macierze,
@@ -205,7 +241,7 @@
   Na systemach Linux i BSD będą odwrócone dwie macierze. Na systemie Windows będzie odwrócona jedna macierz.
 </p>
 
-<h3>Raport dla systemu Linux</h3>
+<h3 id="rev_mat_linux">Raport dla systemu Linux</h3>
 
 <table>
   <tr><th></th><th>Odwracanie macierzy#1 (w sek)</th><th>Odwracanie macierzy#2 (w sek)</th></tr>
@@ -232,7 +268,7 @@
   Najgorzej wypadł komputer labc192, a najlepiej komputer labc194.
 </p>
 
-<h3>Raport dla systemu FreeBSD</h3>
+<h3 id="rev_mat_bsd">Raport dla systemu FreeBSD</h3>
 
 <table>
 <tr><th></th><th>Odwracanie macierzy#1 (w sek)</th><th>Odwracanie macierzy#2 (w sek)</th></tr>
@@ -260,7 +296,7 @@
   W obu testach nienajlepiej wyszedł komputer labc197. Całkiem szybko się wykonały testy na komputerze labc194.
 </p>
 
-<h3>Raport dla systemu Windows</h3>
+<h3 id="rev_mat_windows">Raport dla systemu Windows</h3>
 
 <table>
   <tr><th></th><th>Odwracanie macierzy (w sek)</th></tr>
@@ -289,7 +325,7 @@
   Najgorzej wypadł komputer labc198, a najlepiej komputer labc192.
 </p>
 
-<h3>Podsumowanie kilku systemów</h3>
+<h3 id="rev_mat_summ">Podsumowanie kilku systemów</h3>
 
 <h4>Wykres</h4>
 
@@ -303,7 +339,7 @@
   system Linux poradził sobie lepiej niż FreeBSD. Na systemie Windows nie odwracano drugiej macierzy.
 </p>
 
-<h2>Obliczenia - test mnożenia macierzy</h2>
+<h2 id="mlt_mat">Obliczenia - test mnożenia macierzy</h2>
 <h3>Wstęp</h3>
 <p>
   W testach będzie badany czas wykonywania się procedury mnożenia macierzy. Do testów zostały wykorzystane macierze,
@@ -317,7 +353,7 @@
 </p>
 
 
-<h3>Raport dla systemu Linux</h3>
+<h3 id="mlt_mat_linux">Raport dla systemu Linux</h3>
 
 <table>
   <tr><th></th><th>Mnożenie macierzy (w sek)</th></tr>
@@ -344,7 +380,7 @@
   Były aż 4 najlepsze komputery z wynikiem 0,011. Jedynie wypadł słabo komputer labc193.
 </p>
 
-<h3>Raport dla systemu FreeBSD</h3>
+<h3 id="mlt_mat_bsd">Raport dla systemu FreeBSD</h3>
 
 <table>
 <tr><th></th><th>Mnożenie macierzy (w sek)</th></tr>
@@ -372,7 +408,7 @@
   Najgorzej wypadł komputer labc193, a najlepiej komputer labc195.
 </p>
 
-<h3>Raport dla systemu Windows</h3>
+<h3 id="mlt_mat_windows">Raport dla systemu Windows</h3>
 
 <table>
   <tr><th></th><th>Mnożenie macierzy (w sek)</th></tr>
@@ -400,7 +436,7 @@
   Najgorzej wypadł komputer labc197, a najlepiej komputer labc198.
 </p>
 
-<h3>Podsumowanie kilku systemów</h3>
+<h3 id="mlt_mat_summ">Podsumowanie kilku systemów</h3>
 <h4>Wykres</h4>
 
 <p class="charts">
@@ -413,7 +449,7 @@
   być zbyt krótki czas wykonywania obliczeń i różnice te mogą być czystym przypadkiem.
 </p>
 
-
+<h4 style="text-align: right">Autor: Maciej Raszkiewicz</h4>
 </div>
 </body>
 </html>
