@@ -9,6 +9,7 @@
 
 <body>
 <div id="header">
+	<br/>
   <h1>Raport z testów - Kompresja</h1>
 </div>
 
@@ -29,8 +30,1525 @@
 </ul>
 </div>
 <div id="main">
-<h2>Strona główna</h2>
+<br>
+<ul class="info">
+<li><b>Spis treści</b></li>
+<li><a href="#zip">1. ZIP i UNZIP</a>
+</li>
+<li><a href="#rar">2. RAR i UNRAR</a>
+<ul class="int">
+<li><a href="#rar_linux">2.1 Linux</a></li>
+<li><a href="#rar_bsd">2.2 FreeBSD</a></li>
+<li><a href="#rar_summ">2.4 Podsumowanie</a></li>
+</ul>
+</li>
+<li><a href="#gzip">3. GZIP i GUNZIP </a>
+<ul class="int">
+<li><a href="#gzip_linux">3.1 Linux</a></li>
+<li><a href="#gzip_bsd">3.2 FreeBSD</a></li>
+</li><li><a href="#gzip_win">3.3 Windows</a></li>
+<li><a href="#gzip_summ">3.4 Podsumowanie</a></li>
+</ul>
+<li><a href="#xz">4. XZ i UNXZ</a>
+</li>
+</li>
+
+</li>
+<li></li>
+</ul>
+
 <!-- Tu raporty -->
+<h2 id="zip">Test programem ZIP i UNZIP</h2>
+	  <h3>Wstęp</h3>
+	  <p>
+	    Test pozwala zmierzyć wydajność kompresji katalogu do formatu ".zip" i dekompresji skompresowanego wcześniej pliku.
+	  </p>
+	  <h3>Procedura testowa</h3>
+	  <p>
+	   Test wykonano programem ZIP dla kompresji i programem UNZIP dla dekompresji na pliku pobranym ze strony <a href="https://cdn.kernel.org/pub/linux/kernel/v4.x/testing/linux-4.4-rc2.tar.xz">https://cdn.kernel.org/pub/linux/kernel/v4.x/testing/linux-4.4-rc2.tar.xz</a>. Test polega na zmierzeniu czasu kompresji i dekompresji. Im krótszy otrzymamy czas, tym lepiej. Parametry użyte podczas kompresji to -r i -q natomiast dla dekompresji to -X.
+	   <br ><br>
+	   <b>r </b>- powoduje on, że do pliku archiwum.zip trafia nie tylko dany katalog, ale również jego zawartość.<br>
+	   <b>q </b>- tryb cichy. Nie wyświetla komunikatów informacyjnych.<br>
+	  <b> X </b>- rozpakowanie archiwum archiwum.zip, przywracając oryginalne wartości UID i GID.<br>
+	  </p>
+	  <h3>Wyniki dla systemu Linux</h3>
+	  
+	  <h4>Tabela - wyniki ogólne</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas kompresji (w sekundach)
+		</th>
+		<th>
+		  Czas dekompresji (w sekundach)
+		</th>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Średnia arytmetyczna
+		</th>
+		<td>
+		  17,125
+		</td>
+		<td>
+		  6,936
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Odchylenie standardowe
+		</th>
+		<td>
+		  0,166
+
+		</td>
+		<td>
+		  1,127
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość maksymalna
+		</th>
+		<td>
+		  17,394
+
+		</td>
+		<td>
+		  9,336
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość minimalna
+		</th>
+		<td>
+		  16,921
+
+		</td>
+		<td>
+		  5,920
+
+		</td>
+		
+	      </tr>
+	    </table>
+	  <h4>Tabela - wyniki szczegółowe</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas kompresji (w sekundach)
+		</th>
+		<th>
+		  Czas dekompresji (w sekundach)
+		</th>
+		
+	      </tr>
+	      <tr>
+		<th >
+		 Komputer labc192
+		</th>
+		<td class="best">
+		  16,921
+
+		</td>
+		<td>
+		  6,812
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Komputer labc193
+		</th>
+		<td>
+		  17,249
+
+		</td>
+		<td>
+		  6,432
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Kopmuter labc194
+		</th>
+		<td>
+		  16,964
+
+		</td>
+		<td class="best">
+		  5,920
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		
+		<th>
+		  Komputer labc195
+		</th>
+		<td >
+		 17,107
+		</td>
+		<td>
+		  7,119
+		</td>
+		
+		
+	      </tr>
+		  <tr>
+		
+		<th>
+		  Komputer labc197
+		</th>
+		<td  class="worst">
+		 17,394
+
+		</td>
+		<td class="worst">
+		  9,336
+		</td>
+		
+		
+	      </tr>
+		  <tr>
+				<th>
+		  Komputer labc198
+		</th>
+		<td >
+		 17,050
+
+		</td>
+		<td>
+		  6,679
+
+		</td>
+		
+		
+	      </tr>
+		  <tr>
+		
+		<th>
+		  Komputer labc199
+		</th>
+		<td >
+		 17,190
+		</td>
+		<td>
+		  6,256
+		</td>
+		
+		
+	      </tr>
+	    </table>
+	  <h3>Podsumowanie</h3>
+	  <p>
+	    Rozpatrując wyniki powyższego testu można zauważyć, że najgorzej wypadł komputer labc197 zarówno dla kompresji, osiągając czas 17,394s, jak i dekompresji, osiągając czas  9,336s. Komputer labc192 osiągnął najlepszy wynik podczas kompresji (16,921s), natomiast komputer labc194 przy dekompresji (5,920s). Małe odchylenie standardowe wskazuje na małe różnice w wynikach pomiędzy poszczególnymi komputerami. 
+	  </p>
+	 
+	 
+	 
+	 
+	 
+	 <h2 id="rar">Test programem RAR i UNRAR</h2>
+	  <h3>Wstęp</h3>
+	  <p>
+	    Test pozwala zmierzyć wydajność kompresji katalogu do formatu ".rar" i dekompresji skompresowanego wcześniej pliku.
+	  </p>
+	  <h3>Procedura testowa</h3>
+	  <p>
+	    Test wykonano programem RAR dla kompresji i programem UNRAR dla dekompresji na pliku pobranym ze strony <a href="https://cdn.kernel.org/pub/linux/kernel/v4.x/testing/linux-4.4-rc2.tar.xz">https://cdn.kernel.org/pub/linux/kernel/v4.x/testing/linux-4.4-rc2.tar.xz</a>. Test polega na zmierzeniu czasu kompresji i dekompresji. Im krótszy otrzymamy czas, tym lepiej. Parametry użyte podczas kompresji to -a i -idq, z kolei dla dekompresji parametr -x.
+		<br ><br>
+	   <b>a</b>- dodanie pliku do archiwum.<br>
+	   <b>idq </b>- tryb cichy. Wyłącza wyświetlanie komunikatów.<br>
+	  <b> x </b>- rozpakowanie archiwum archiwum.rar, przywracając oryginalne wartości UID i GID.<br>
+	  </p>
+	  <h3 id="rar_linux">Wyniki dla systemu Linux</h3>
+	  
+	  <h4>Tabela - wyniki ogólne</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas kompresji (w sekundach)
+		</th>
+		<th>
+		  Czas dekompresji (w sekundach)
+		</th>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Średnia arytmetyczna
+		</th>
+		<td>
+		  30,825
+
+		</td>
+		<td>
+		  8,788
+
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Odchylenie standardowe
+		</th>
+		<td>
+		  0,897
+
+
+		</td>
+		<td>
+		  0,488
+
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość maksymalna
+		</th>
+		<td>
+		  32,479
+
+
+
+		</td>
+		<td>
+		  9,400
+
+
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość minimalna
+		</th>
+		<td>
+		  29,703
+
+
+		</td>
+		<td>
+		  8,007
+
+
+		</td>
+		
+	      </tr>
+	    </table>
+	  <h4>Tabela - wyniki szczegółowe</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas kompresji (w sekundach)
+		</th>
+		<th>
+		  Czas dekompresji (w sekundach)
+		</th>
+		
+	      </tr>
+	      <tr>
+		<th >
+		 Komputer labc192
+		</th>
+		<td >
+		  30,792
+
+
+		</td>
+		<td>
+		  9,375
+
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Komputer labc193
+		</th>
+		<td>
+		  31,397
+
+
+		</td>
+		<td>
+		  8,814
+
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Kopmuter labc194
+		</th>
+		<td class="best"> 
+		  29,703
+
+
+		</td>
+		<td >
+		  8,574
+
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		
+		<th>
+		  Komputer labc195
+		</th>
+		<td >
+		 30,760
+
+		</td>
+		<td>
+		  8,794
+
+		</td>
+		
+		
+	      </tr>
+		  <tr>
+		
+		<th>
+		  Komputer labc197
+		</th>
+		<td class="worst" >
+		 32,479
+
+
+		</td>
+		<td class="worst">
+		  9,400
+
+		</td>
+		
+		
+	      </tr>
+		  <tr>
+		
+		<th>
+		  Komputer labc198
+		</th>
+		<td >
+		 30,321
+
+
+		</td>
+		<td>
+		  8,552
+
+
+		</td>
+		
+		
+	      </tr>
+		  <tr>
+		
+		<th>
+		  Komputer labc199
+		</th>
+		<td >
+		 30,325
+
+		</td>
+		<td class="best">
+		  8,007
+
+		</td>
+		
+		
+	      </tr>
+	    </table>
+	  <h3>Podsumowanie</h3>
+	  <p>
+	  Najlepszy wynik testu kompresji uzyskał komputer labc194 (29,703s). Najgorszy wynik w obu testach uzyskał komputer labc197, dla kompresji 32,479s, a dla dekompresji 9,400s. Najlepszy wynik testu dekompresji uzyskał komputer labc199 (8,007s).
+	  </p>
+	  <h3 id="rar_bsd">Wyniki dla systemu FreeBSD</h3>
+	  
+	  <h4>Tabela - wyniki ogólne</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas kompresji (w sekundach)
+		</th>
+		<th>
+		  Czas dekompresji (w sekundach)
+		</th>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Średnia arytmetyczna
+		</th>
+		<td>
+		  87,231
+		</td>
+		<td>
+		  37,550
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Odchylenie standardowe
+		</th>
+		<td>
+		  72,488
+
+		</td>
+		<td>
+		  7,735
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość maksymalna
+		</th>
+		<td>
+		  251,085
+
+
+
+
+		</td>
+		<td>
+		  53,446
+
+
+
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość minimalna
+		</th>
+		<td>
+		  53,435
+
+
+
+		</td>
+		<td>
+		  30,001
+
+
+
+		</td>
+		
+	      </tr>
+	    </table>
+	  <h4>Tabela - wyniki szczegółowe</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas kompresji (w sekundach)
+		</th>
+		<th>
+		  Czas dekompresji (w sekundach)
+		</th>
+		
+	      </tr>
+	      <tr>
+		<th >
+		 Komputer labc192
+		</th>
+		<td class="worst">
+		  251,085
+		</td>
+		<td>
+		  36,665
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Komputer labc193
+		</th>
+		<td>
+		  63,409
+
+		</td>
+		<td>
+		  36,577
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Kopmuter labc194
+		</th>
+		<td > 
+		  61,852
+
+
+
+		</td>
+		<td class="best">
+		  30,001
+
+
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		
+		<th>
+		  Komputer labc195
+		</th>
+		<td >
+		 70,15
+
+
+		</td>
+		<td>
+		  34,678
+
+
+		</td>
+		
+		
+	      </tr>
+		  <tr>
+		
+		<th>
+		  Komputer labc197
+		</th>
+		<td class="best">
+		 53,435
+
+
+
+		</td>
+		<td class="worst">
+		  53,446
+
+		</td>
+		
+		
+	      </tr>
+		  <tr>
+		
+		<th>
+		  Komputer labc198
+		</th>
+		<td >
+		 55,306
+
+		</td>
+		<td>
+		  39,79
+
+		</td>
+		
+		
+	      </tr>
+		  <tr>
+		
+		<th>
+		  Komputer labc199
+		</th>
+		<td >
+		 55,383
+
+
+		</td>
+		<td >
+		  31,693
+
+
+		</td>
+		
+		
+	      </tr>
+	    </table>
+	  <h3 >Podsumowanie</h3>
+	  <p>
+	    	    
+		Najlepszy wynik podczas kompresji 53,435s uzyskał komputer labc197.  Komputer labc192 osiągnął najgorszy wynik podczas tego testu, osiągając wynik 251,085s. Należy zauważyć, że wynik ten bardzo różni się od pozostałych. Może on spowodować, że otrzymane wyniki będą niewiarygodne. Najlepszy czas dekompresji uzyskał komputer labc194 (30,001s), natomiast najgorszy wynik zanotowano dla komputera labc197 (53,446s).
+
+	  </p>
+	  <h3 id="rar_summ">Podsumowanie kilku systemów</h3>
+	  <p>
+	    Poniższe wykresy przedstawiają porównanie średniego czasu kompresji i dekompresji na systemie operacyjnym Linux i FreeBSD. 
+	  </p>
+	  
+		  
+	  <p class="charts">
+	    <img src="res/kompresja/kompresja_rar.png"/>
+	  </p>
+	  
+	  <p class="charts">
+	    <img src="res/kompresja/dekompresja_rar.png"/>
+	  </p>
+	  
+          <p>Zaróno dla kompresji i dekompresji najlepsze wyniki uzyskaliśmy na systemie Linux. System operacyjny FreeBSD dla kompresji uzyskał prawie 3 razy gorszy wynik, natomiast dla dekompresji prawie czterokrotnie gorszy. </p>
+		   
+		   
+		   
+		   
+		   <h2 id="gzip">Test programem GZIP i GUNZIP</h2>
+	  <h3>Wstęp</h3>
+	  <p>
+	    Test pozwala zmierzyć wydajność kompresji zarchiwizowanego pliku programem tar do formatu ".gz" i dekompresji skompresowanego wcześniej pliku.
+	  </p>
+	  <h3>Procedura testowa</h3>
+	  <p>
+Test wykonano programem GZIP dla kompresji i dekompresji na pliku pobranym ze strony <a href="https://cdn.kernel.org/pub/linux/kernel/v4.x/testing/linux-4.4-rc2.tar.xz">https://cdn.kernel.org/pub/linux/kernel/v4.x/testing/linux-4.4-rc2.tar.xz</a>. Test polega na zmierzeniu czasu kompresji i dekompresji. Im krótszy otrzymamy czas, tym lepiej. Parametr użyty podczas kompresji to -c, z kolei dla dekompresji użyto parametru -d.
+		<br ><br>
+	   <b>c</b>- kompresowanie bez usuwania pliku wejściowego.<br>
+	   <b>d </b>- dekompresja.<br>
+	
+	  </p>
+	  <h3 id="gzip_linux">Wyniki dla systemu Linux</h3>
+	  
+	  <h4>Tabela - wyniki ogólne</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas kompresji (w sekundach)
+		</th>
+		<th>
+		  Czas dekompresji (w sekundach)
+		</th>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Średnia arytmetyczna
+		</th>
+		<td>
+		  18,347
+		</td>
+		<td>
+		  4,104
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Odchylenie standardowe
+		</th>
+		<td>
+		  0,908
+		</td>
+		<td>
+		  0,818
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość maksymalna
+		</th>
+		<td>
+		  20,059
+		</td>
+		<td>
+		  5,758
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość minimalna
+		</th>
+		<td>
+		  17,483
+		</td>
+		<td>
+		  3,552
+		</td>
+		
+	      </tr>
+	    </table>
+	  <h4>Tabela - wyniki szczegółowe</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas kompresji (w sekundach)
+		</th>
+		<th>
+		  Czas dekompresji (w sekundach)
+		</th>
+		
+	      </tr>
+	      <tr>
+		<th >
+		 Komputer labc192
+		</th>
+		<td >
+		  18,747
+
+		</td>
+		<td>
+		  3,561
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Komputer labc193
+		</th>
+		<td class="worst">
+		  20,059
+		</td>
+		<td>
+		  3,827
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Kopmuter labc194
+		</th>
+		<td class="best"> 
+		  17,483
+		</td>
+		<td >
+		  3,700
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		
+		<th>
+		  Komputer labc195
+		</th>
+		<td >
+		 18,449
+
+		</td>
+		<td>
+		  3,698
+
+		</td>
+		
+		
+	      </tr>
+		  <tr>
+		
+		<th>
+		  Komputer labc197
+		</th>
+		<td  >
+		 17,666
+
+		</td>
+		<td >
+		  4,632
+
+		</td>
+		
+		
+	      </tr>
+		  <tr>
+		
+		<th>
+		  Komputer labc198
+		</th>
+		<td >
+		 17,559
+		</td>
+		<td class="worst">
+		  5,758
+
+		</td>
+		
+		
+	      </tr>
+		  <tr>
+		
+		<th>
+		  Komputer labc199
+		</th>
+		<td >
+		 18,465
+
+		</td>
+		<td class="best">
+		  3,552
+
+
+		</td>
+		
+		
+	      </tr>
+	    </table>
+	  <h3>Podsumowanie</h3>
+	  <p>
+	    Najlepszy wynik dla kompresji osiągnęła maszyna labc194 (17,483s), natomiast dla dekompresji maszyna labc199 (3,552s). Najgorsze wyniki dla testu kompresji zanotowano dla komputera labc193 (20,059s). Z dekompresją słabo sobie poradził komputer labc198 (5,758s). 
+	  </p>
+	  <h3 id="gzip_bsd">Wyniki dla systemu FreeBSD</h3>
+	  
+	  <h4>Tabela - wyniki ogólne</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas kompresji (w sekundach)
+		</th>
+		<th>
+		  Czas dekompresji (w sekundach)
+		</th>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Średnia arytmetyczna
+		</th>
+		<td>
+		  20,138
+
+		</td>
+		<td>
+		  5,968
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Odchylenie standardowe
+		</th>
+		<td>
+		  8,044
+		</td>
+		<td>
+		  2,586
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość maksymalna
+		</th>
+		<td>
+		  26,183
+		</td>
+		<td >
+		  8,800
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość minimalna
+		</th>
+		<td>
+		  2,919
+
+		</td>
+		<td>
+		  0,905
+		</td>
+		
+	      </tr>
+	    </table>
+	  <h4>Tabela - wyniki szczegółowe</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas kompresji (w sekundach)
+		</th>
+		<th>
+		  Czas dekompresji (w sekundach)
+		</th>
+		
+	      </tr>
+	      <tr>
+		<th >
+		 Komputer labc192
+		</th>
+		<td class="best">
+		  2,919
+
+		</td>
+		<td class="best">
+		  0,905
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Komputer labc193
+		</th>
+		<td>
+		  20,783
+		</td>
+		<td>
+		  7,715
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Kopmuter labc194
+		</th>
+		<td > 
+		  20,033
+
+		</td>
+		<td >
+		  5,319
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		
+		<th>
+		  Komputer labc195
+		</th>
+		<td >
+		 20,326
+		</td>
+		<td>
+		  6,379
+		</td>
+				
+	      </tr>
+		  <tr>
+		
+		<th>
+		  Komputer labc197
+		</th>
+		<td >
+		 25,051
+
+		</td>
+		<td >
+		  7,459
+
+		</td>
+		
+		
+	      </tr>
+		  <tr>
+		
+		<th>
+		  Komputer labc198
+		</th>
+		<td >
+		 25,669
+
+		</td >
+		<td class="worst">
+		  8,800
+		</td>
+		
+		
+	      </tr>
+		  <tr>
+		
+		<th>
+		  Komputer labc199
+		</th>
+		<td class="worst">
+		 26,183
+
+		</td>
+		<td >
+		  5,200
+
+
+
+		</td>
+		
+		
+	      </tr>
+	    </table>
+	  <h3>Podsumowanie</h3>
+	  <p>
+	    W obu przypadkach najlepszy czas osiągnęła maszyna labc192, jednak wyniki są pieciokrotnie niższe w teście kompresji i dekompresji niż w pozostałych przypadkach. Sytuacja ta może zaburzyć prawdziwy obraz testów. Zauważyć można, że pozostałe komputery wykonały test w czasie nie krótszym niż 20,033s dla kompresji i 5,200s dla dekompresji. Najgorsze wyniki uzyskała maszyna labc199 (26,183s) dla kompresji i maszyna labc198 (8,800s).
+	  </p>
+	 
+	  <p>
+	    
+	  </p>
+	  <h3 id="gzip_win">Wyniki dla systemu Windows</h3>
+	  
+	  <h4>Tabela - wyniki ogólne</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas kompresji (w sekundach)
+		</th>
+		<th>
+		  Czas dekompresji (w sekundach)
+		</th>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Średnia arytmetyczna
+		</th>
+		<td>
+		  18,043
+
+		</td>
+		<td>
+		  4,276
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Odchylenie standardowe
+		</th>
+		<td>
+		  4,113
+		</td>
+		<td>
+		  0,895
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość maksymalna
+		</th>
+		<td>
+		  20,884
+
+		</td>
+		<td>
+		  4,895
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość minimalna
+		</th>
+		<td>
+		  8,817
+		</td>
+		<td>
+		  2,284
+
+		</td>
+		
+	      </tr>
+	    </table>
+	  <h4>Tabela - wyniki szczegółowe</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas kompresji (w sekundach)
+		</th>
+		<th>
+		  Czas dekompresji (w sekundach)
+		</th>
+		
+	      </tr>
+	      <tr>
+		<th >
+		 Komputer labc192
+		</th>
+		<td >
+		  19,214
+		</td>
+		<td class="worst">
+		  4,895
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Komputer labc193
+		</th>
+		<td>
+		  19,482
+
+		</td>
+		<td>
+		  4,545
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Kopmuter labc194
+		</th>
+		<td > 
+		  19,263
+
+		</td>
+		<td >
+		  4,475
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		
+		<th>
+		  Komputer labc195
+		</th>
+		<td >
+		 19,545
+
+		</td>
+		<td>
+		  4,679
+
+		</td>
+		
+		
+	      </tr>
+		  <tr>
+		
+		<th>
+		  Komputer labc197
+		</th>
+		<td >
+		 19,098
+
+		</td>
+		<td >
+		  4,368
+
+
+		</td>
+		
+		
+	      </tr>
+		  <tr>
+		
+		<th>
+		  Komputer labc198
+		</th>
+		<td class="best">
+		 8,817
+
+
+		</td>
+		<td class="best">
+		  2,284
+
+
+		</td>
+		
+		
+	      </tr>
+		  <tr>
+		
+		<th>
+		  Komputer labc199
+		</th>
+		<td class="worst">
+		 20,884
+
+
+
+		</td>
+		<td >
+		  4,685
+
+
+
+		</td>
+		
+		
+	      </tr>
+	    </table>
+	  <h3 >Podsumowanie</h3>
+	  <p>
+	    I w tym przypadku spotykamy się z sytuacją, kiedy jedna z maszyn uzyskała skrajnie niskie wartości, które mogą zaburzać obraz wyników testów. Najlepszy wynik dla kompresji (8,817s) i dekompresji (2,284s) uzyskała maszyna labc198. Najgorszy wynik kompresji zanotowano na maszynie labc199 (20,884s). Z dekompresją słabo poradziła sobie maszyna labc192 uzyskując wynik 4,895s.
+	  </p>
+	  </p>
+	  <h3 id="gzip_summ">Podsumowanie kilku systemów</h3>
+	  <p>
+	  
+	 Poniższe wykresy przedstawiają porównanie średniego czasu kompresji i dekompresji na systemie operacyjnym Linux, FreeBSD i Windows.
+	  <p class="charts">
+	    <img src="res/kompresja/kompresja_gzip.png"/>
+	  </p>
+	  
+	  <p class="charts">
+	    <img src="res/kompresja/dekompresja_gzip.png"/>
+	  </p>
+	  
+          <p> Z powyższych wykresów widać, że najlepiej z testami w przypadku kompresji poradził sobie system Windows. Na drugim miejscu Linux. Najgorzej wypadł system FreeBSD uzyskując ponad dwa razy gorszy czas od Windowsa i dwa razy gorszy od Linuxa. W przypadku dekompresji lepszy okazał się Linux i to on uzyskał najmniejszy czas wykonywania testu. Jak i w poprzednich przypadkach testy dekompresji najdłużej wykonywał system FreeBSD. </p>
+
+		  
+		  
+	<h2 id="xz">Test programem XZ i UNXZ</h2>
+	  <h3>Wstęp</h3>
+	  <p>
+	    Test pozwala zmierzyć wydajność kompresji zarchiwizowanego pliku programem tar do formatu ".xz" i dekompresji skompresowanego wcześniej pliku.
+	  </p>
+	  <h3>Procedura testowa</h3>
+	  <p>
+Test wykonano programem XZ dla kompresji i programem UNXZ dla dekompresji na pliku pobranym ze strony <a href="https://cdn.kernel.org/pub/linux/kernel/v4.x/testing/linux-4.4-rc2.tar.xz">https://cdn.kernel.org/pub/linux/kernel/v4.x/testing/linux-4.4-rc2.tar.xz</a>. Test polega na zmierzeniu czasu kompresji i dekompresji. Im krótszy otrzymamy czas, tym lepiej. Parametry użyte podczas kompresji to -z i -k natomiast dla dekompresji nie użyto żadnych dodatkowych parametrów.
+	   <br ><br>
+	   <b>z</b> - wymuszenie kompresji.<br>
+	   <b>k </b>- zachowanie pliku wejściowego.<br>
+	  </p>
+	  <h3>Wyniki dla systemu Linux</h3>
+	 
+	  <h4>Tabela - wyniki ogólne</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas kompresji (w sekundach)
+		</th>
+		<th>
+		  Czas dekompresji (w sekundach)
+		</th>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Średnia arytmetyczna
+		</th>
+		<td>
+		  7,057
+		</td>
+		<td>
+		  277,932
+
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Odchylenie standardowe
+		</th>
+		<td>
+		  0,295
+
+
+		</td>
+		<td>
+		  5,048
+
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość maksymalna
+		</th>
+		<td>
+		  7,512
+
+
+		</td>
+		<td>
+		  286,69
+
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość minimalna
+		</th>
+		<td>
+		  6,605
+
+
+		</td>
+		<td>
+		  273,32
+
+
+		</td>
+		
+	      </tr>
+	    </table>
+	  <h4>Tabela - wyniki szczegółowe</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas kompresji (w sekundach)
+		</th>
+		<th>
+		  Czas dekompresji (w sekundach)
+		</th>
+		
+	      </tr>
+	      <tr>
+		<th >
+		 Komputer labc192
+		</th>
+		<td >
+		  7,298
+
+		</td>
+		<td class="worst">
+		  286,69
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Komputer labc193
+		</th>
+		<td class="worst">
+		  7,512
+
+
+		</td>
+		<td class="best">
+		  273,32
+
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		<th>
+		  Kopmuter labc194
+		</th>
+		<td>
+		  6,843
+
+
+		</td>
+		<td >
+		  273,712
+
+
+		</td>
+		
+	      </tr>
+	      <tr>
+		
+		<th>
+		  Komputer labc195
+		</th>
+		<td >
+		 7,012
+
+		</td>
+		<td>
+		  273,464
+
+		</td>
+		
+		
+	      </tr>
+		  <tr>
+		
+		<th>
+		  Komputer labc197
+		</th>
+		<td  >
+		 7,024
+
+
+		</td>
+		<td >
+		  277,120
+
+		</td>
+		
+		
+	      </tr>
+		  <tr>
+		
+		<th>
+		  Komputer labc198
+		</th>
+		<td >
+		 7,105
+		</td>
+		<td>
+		  279,568
+
+		</td>
+		
+		
+	      </tr>
+		  <tr>
+		
+		<th>
+		  Komputer labc199
+		</th>
+		<td class="best">
+		6,605
+
+		</td>
+		<td>
+		 281,647
+
+		</td>
+		
+		
+	      </tr>
+	    </table>
+	  <h3>Podsumowanie</h3>
+	  <p>
+	    Komputer labc199 uzyskał najlepszy wynik w przypadku kompresji, natomiast maszyna labc193 w przypadku dekompresji. Największy czas dla kompresji uzyskała maszyna labc193, a dla dekompresji labc192.
+	  </p>
+	  <h4 style="text-align: right">Autor: Alicja Baran</h4>
 </div>
 </body>
 </html>
