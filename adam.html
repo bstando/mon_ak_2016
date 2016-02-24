@@ -31,7 +31,22 @@
     </div>
 
     <div id="main">
-      <div>
+      <div class="ac_spis_tresci">
+	<h2>Spis treści</h2>
+	<ol>
+	  <li>
+	    <a href="#dd">Test z użyciem programu <i>dd</i></a>
+	  </li>
+	  <li>
+	    <a href="#bonnie">Test z użyciem programu <i>Bonnie++</i></a>
+	  </li>
+	  <li>
+	    <a href="#tiobench">Test z użyciem programu <i>Tiobench</i></a>
+	  </li>
+	</ol>
+      </div>
+      
+      <div id="dd">
         <h2>Test z użyciem programu <i>dd</i></h2>
         <div>
           <h3>Wstęp</h3>
@@ -141,9 +156,8 @@
           </p>
         </div>
 
-
-        <h2>Test z użyciem programu Bonnie++</h2>
-        <div>
+        <div id="bonnie">
+          <h2>Test z użyciem programu Bonnie++</h2>
           <h3>Wstęp</h3>
           <p>
             Test ten pozwala zmierzyć prędkość odczytu i zapisu danych z uwzględnieniem właściwości systemu plików. Do właściwości systemu plików możemy zaliczyć operacje na metadanych (np. operacje na i-node) podczas tworzenia, usuwania małych/dużych plików czy sprawdzaniu rozmiaru pliku. Część systemów plików jest zoptymalizowana do operacji na metadanych w pewnej kolejności, dlatego test bada również losowo występujące operacje na metadanych.
@@ -423,8 +437,9 @@
           <p>
             Systemy plików ext2 oraz ext3 pod względem ilości opertacji tworzenia i usuwania plików w systemie FreeBSD nie różniły się znacząco pomiędzy sobą.
           </p>
+	</div>
 
-
+	<div id="tiobench">
           <h2>Test z użyciem programu tiobench</h2>
           <h3>Wstęp</h3>
           <p>
