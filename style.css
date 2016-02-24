@@ -87,6 +87,11 @@ background-color: #FF0000
     width: fit-content;
 }
 
+a:visited,
+a:link {
+    color: #03223c;
+}
+
 .charts {
 	text-align: center;
 }
