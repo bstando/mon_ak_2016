@@ -74,8 +74,8 @@ background-color: #00FF00
 background-color: #FF0000
 }
 
-.info {
-    margin-top: 15pt;
+.toc {
+    margin-top: 25pt;
     margin-bottom: 15pt;
     background-color: #C2D7ED;
     text-align: left;
@@ -88,6 +88,6 @@ background-color: #FF0000
 	text-align: center;
 }
 
-.int {
+.ind {
    margin-left: 20px;
 }
