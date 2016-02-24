@@ -11,3 +11,23 @@
     width: 70%;
 }
 
+.ac_spis_tresci {
+    padding-bottom: 5pt;
+}
+
+.ac_spis_tresci ol {
+    width: fit-content;
+    border: 2px dotted #3465A4;
+    background-color: #C2D7ED;
+    padding: 5pt;
+    padding-left: 30pt;
+}
+
+.ac_spis_tresci ol li a:visited,
+.ac_spis_tresci ol li a:link {
+    color: #03223c;
+}
+
+.ac_spis_tresci ol li ol {
+    border: none;
+}
