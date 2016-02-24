@@ -29,11 +29,28 @@
 </ul>
 </div>
 <div id="main">
+
+  <!-- Spis treści -->
+  <ul class="info">
+    <li><b>Spis treści</b></li>
+    <li><a href="#iperf">1 Iperf</a>
+      <ul class="int">
+        <li><a href="#iperf-aleks">1.1 Linux z routerem pośredniczącym</a></li>
+        <li><a href="#iperf-windows">1.2 Windows - Windows</a></li>
+        <li><a href="#iperf-bsd">1.3 BSD - BSD</a></li>
+        <li><a href="#iperf-bsd-linux">1.4 BSD - Linux</a></li>
+        <li><a href="#iperf-linux">1.5 Linux - Linux</a></li>
+      </ul>
+    </li>
+    <li><a href="#mtr">2 Mtr</a></li>
+  </ul>
+  <!-- Koniec spisu treści -->
+
 <!-- Tu raporty -->
-  <h2>Iperf</h2>
+  <h2 id="iperf">Iperf</h2>
   <h3>Wstęp</h3>
   <p>
-    Test za pomocą programu Iperf mierzy przepustowość pomiędzy dwoma węzłami w sieci.
+    Test za pomocą programu Iperf mierzy przepustowość pomiędzy dwoma hostami w sieci.
   </p>
   <h3>Procedura testowa</h3>
   <p>
@@ -43,7 +60,7 @@
   </p>
 
   <!-- linux-aleks-->
-  <h3>linux - linux z routerem pośredniczącym</h3>
+  <h3 id="iperf-aleks">Linux - Linux z routerem pośredniczącym</h3>
   <p>
 
   </p>
@@ -164,7 +181,7 @@
   </p>
 
   <!-- Windows - windows-->
-  <h3>Windows - windows</h3>
+  <h3 id="iperf-windows">Windows - Windows</h3>
   <p>
 
   </p>
@@ -277,7 +294,7 @@
 
 
   <!--BSD - BSD-->
-  <h3>BSD - BSD</h3>
+  <h3 id="iperf-bsd">BSD - BSD</h3>
   <h4>Tabela - wyniki ogólne</h4>
   <table>
     <tr>
@@ -424,7 +441,7 @@
 
 
   <!--BSD - linux-->
-  <h3>BSD - linux</h3>
+  <h3 id="iperf-bsd-linux">BSD - Linux</h3>
   <h4>Tabela - wyniki ogólne</h4>
   <table>
     <tr>
@@ -570,7 +587,7 @@
   </p>
 
 
-  <h3>Linux - linux</h3>
+  <h3 id="iperf-linux">Linux - Linux</h3>
   <p>
     <!--linux-linux-->
   </p>
@@ -739,7 +756,7 @@
 
 
 
-  <h2>Mtr</h2>
+  <h2 id="mtr">Mtr</h2>
   <h3>Wstęp</h3>
   <p>
     Test za pomocą programu mtr mierzy czas odpowiedzi serwera <a href="#">kernel.org</a>
