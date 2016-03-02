@@ -77,7 +77,7 @@
   Program glmark2 jest uruchamiany 2 razy. Raz w trybie okna dla rozdzielczości 640x480 oraz
   drugi raz w trybie pełnoekranowym. Opcje:
   <ul>
-    <li><b>-f plik</b> - oznacza by glmark2 wykonał wszystkie testy, które zostałypodane w tym pliku oraz żeby
+    <li><b>-f plik</b> - oznacza by glmark2 wykonał wszystkie testy, które zostały podane w tym pliku oraz żeby
       policzył z nich średnią liczbę klatek na sekundę.</li>
     <li><b>-s WxH</b> - uruchamia testy w trybie okna o rozmiarach W i H</li>
   </ul> Parametr
@@ -115,7 +115,7 @@
 <h3>Wstęp</h3>
 <p>
   Glxgears jest to program do testowania wydajności renderowania grafiki na danym sprzęcie i systemie. Jest on dołączany
-  z otwartoźródłowymi sterownikami do karty graficznej(mesa). Program wyświetla animacje na której poruszają się 3 koła
+  z otwartoźródłowymi sterownikami do karty graficznej(mesa). Program wyświetla animacje, na której poruszają się 3 koła
   zębate i co 5 sekund mierzy ilość wygenerowanych w tym czasie klatek oraz liczbę klatek na sekundę. Testy będą uruchamiane na
   systemach Linux, BSD i Windows.
 </p>
@@ -183,7 +183,7 @@
 <h3>Podsumowanie</h3>
 <p>
   Źle wypadł komputer labc193, który wypadł najgorzej aż w 3 róznych testach. Najlepiej wyszedł komputer labc198, który
-  dobrze wypadł w 2 testach, a w innych niewiele mu brakowało tego żeby być najlepszym.
+  dobrze wypadł w 2 testach, a w innych niewiele mu brakowało do tego, żeby być najlepszym.
 </p>
 
 <h3 id="glxgears_windows">Raport dla systemu Windows</h3>
@@ -221,7 +221,7 @@
 </p>
 <h4>Podsumowanie</h4>
 <p>
-  Z wykresu można zauważyć, że na systemach Linux i FreeBSD wyniki są podobne. Na systemie Windows wynik jest 3 razy
+  Z wykresu można zauważyć, że na systemach Linux i FreeBSD wyniki są podobne. Na systemie Windows wynik jest 3 razy,
   ponieważ implementacja tego programu się może różnić od implementacji na systemach unix. Program na system windows
   nie miał możliwości ustawienia rozmiaru okna czy trybu pełnoekranowego.
 </p>
@@ -230,13 +230,13 @@
 <h3>Wstęp</h3>
 <p>
   W testach będzie badany czas wykonywania się procedury odwracania macierzy. Do testów zostały wykorzystane macierze,
-  zapisane w postaci matrix market. Program ten wykorzystuje biblioteki m. in. scipy oraz numpy.
+  zapisane w postaci matrix market. Program ten wykorzystuje biblioteki m.in. scipy oraz numpy.
   W scipy zawarte są procedury odwracania i mnożenia macierzy. Numpy, która pozwala tworzyć macierze oraz
   wykonywać efektywnie operacje na nich. Testy zostaną przeprowadzone na systemach Linux, BSD i Windows.
 </p>
 <h3>Procedura testowa</h3>
 <p>
-  Będą uruchamiane 2 testy. Program przyjmuje jako parametr macierze na których będzie wykonywać obliczenia.
+  Będą uruchamiane 2 testy. Program przyjmuje jako parametr macierze, na których będzie wykonywać obliczenia.
   Na systemach Linux i BSD będą odwrócone dwie macierze. Na systemie Windows będzie odwrócona jedna macierz.
 </p>
 
@@ -334,7 +334,7 @@
 <h4>Podsumowanie</h4>
 <p>
   W przypadku odwracania pierwszej macierzy wyniki systemów Linux i FreeBSD nie różnią się tak jak w przypadku glxgears.
-  Na systemie windows odwracanie poszło odrobine wolniej niż na innych systemach. W przypadku odwracania większej macierzy
+  Na systemie Windows odwracanie poszło odrobinę wolniej niż na innych systemach. W przypadku odwracania większej macierzy
   system Linux poradził sobie lepiej niż FreeBSD. Na systemie Windows nie odwracano drugiej macierzy.
 </p>
 
@@ -348,7 +348,7 @@
 </p>
 <h3>Procedura testowa</h3>
 <p>
-  Będzie uruchamiany 1 test. Program przyjmuje jako parametr macierze na których będzie wykonywać obliczenia.
+  Będzie uruchamiany 1 test. Program przyjmuje jako parametr macierze, na których będzie wykonywać obliczenia.
 </p>
 
 
@@ -444,7 +444,7 @@
 <h4>Opis</h4>
 <p>
   Z wykresu wynika, że mnożenie macierzy wypadło na systemie Windows 3 razy wolniej,
-  a na systemie FreeBSD 6 razy wolniej niż na systemi Linux, ale przyczyną może
+  a na systemie FreeBSD 6 razy wolniej niż na systemie Linux, ale przyczyną może
   być zbyt krótki czas wykonywania obliczeń i różnice te mogą być czystym przypadkiem.
 </p>
 

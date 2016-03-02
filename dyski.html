@@ -50,7 +50,7 @@
         <div>
           <h3>Wstęp</h3>
           <p>
-            Test ten pozwala zmierzyć wydajność dysku pod względem szybkości odczytu i zapisu danych. Najlepszą formą pomiaru byłoby użycie dysku, czy partycji (np. /dev/sda6), jednakże ze względów praktycznych podczas testów wykorzystano plik znajdujący się w systemie plików. Użycie dysku/partycji pozwoli pomijąć funkcje związane z systemem plików (np. opóźnienie związane z czasem potrzebym na utworzenie odpowiednich wpisów i-node, bufory).
+            Test ten pozwala zmierzyć wydajność dysku pod względem szybkości odczytu i zapisu danych. Najlepszą formą pomiaru byłoby użycie dysku, czy partycji (np. /dev/sda6), jednakże ze względów praktycznych podczas testów wykorzystano plik znajdujący się w systemie plików. Użycie dysku/partycji pozwoli pomijać funkcje związane z systemem plików (np. opóźnienie związane z czasem potrzebnym na utworzenie odpowiednich wpisów i-node, bufory).
           </p>
           <h3>Przebieg i wnioski</h3>
           <p>
@@ -432,11 +432,11 @@
           </p>
 
           <p>
-            Systemy plików z rodziny ext wypadły na systemie Linux najgorzej pod wzgledem prędkości odczytu danych znak po znaku, znacznie lepiej prezentował się NTFS oraz ZFS. Sytuacja jest odwrotna w przypadku zapisu danych znak po znaku, tu króluje rodzina ext, a NTFS i ZFS prezentują się gorzej. Na systemie FreeBSD w przypadku odczytu znak po znaku najlepiej wypadł ZFS, a w przypadku zapisu ext3 oraz ZFS.
+            Systemy plików z rodziny ext wypadły na systemie Linux najgorzej pod względem prędkości odczytu danych znak po znaku, znacznie lepiej prezentował się NTFS oraz ZFS. Sytuacja jest odwrotna w przypadku zapisu danych znak po znaku, tu króluje rodzina ext, a NTFS i ZFS prezentują się gorzej. Na systemie FreeBSD w przypadku odczytu znak po znaku najlepiej wypadł ZFS, a w przypadku zapisu ext3 oraz ZFS.
           </p>
 
           <p>
-            Systemy plików ext2 oraz ext3 pod względem ilości opertacji tworzenia i usuwania plików w systemie FreeBSD nie różniły się znacząco pomiędzy sobą.
+            Systemy plików ext2 oraz ext3 pod względem ilości operacji tworzenia i usuwania plików w systemie FreeBSD nie różniły się znacząco pomiędzy sobą.
           </p>
 	</div>
 
@@ -444,7 +444,7 @@
           <h2>Test z użyciem programu tiobench</h2>
           <h3>Wstęp</h3>
           <p>
-            Ten test został opracowany na podstawie testu znajdującego się w pakiecie <i>Phoronix Test Suite</i>. Pozwala mierzyć prędkośc operacji odczytu, zapisu oraz czas reakcji (latencja). Operacje te wykonywane są w kilku wątkach jednocześnie.
+            Ten test został opracowany na podstawie testu znajdującego się w pakiecie <i>Phoronix Test Suite</i>. Pozwala mierzyć prędkość operacji odczytu, zapisu oraz czas reakcji (latencja). Operacje te wykonywane są w kilku wątkach jednocześnie.
           </p>
 
           <h3>Przebieg i wnioski</h3>
@@ -572,7 +572,7 @@
                   Średnia latencja podczas zapisu (ms)
                 </th>
                 <th>
-                  Maksymalna latencja podczas zapsu (ms)
+                  Maksymalna latencja podczas zapisu (ms)
                 </th>
               </tr>
               <tr>
@@ -680,14 +680,14 @@
           </p>
 
           <p>
-            Wyniki testu pokazują, że średnia prędkość odczytu wyniosła 8001.52 MB/s, zapisu 0.22 MB/s. Latencja podczas zapisu jest zdecydowanie dłuższa, niż podczas odczytu.
+            Wyniki testu pokazują, że średnia prędkość odczytu wyniosła 8001.52 MB/s, zapisu 0.22 MB/s. Latencja podczas zapisu jest zdecydowanie dłuższa niż podczas odczytu.
           </p>
         </div>
 
         <div>
           <h2>Podsumowanie</h2>
           <p>
-            Na podstawie wykonanych testów nie można stwierdzić, który komputer z jakim systemem operacyjnym i systemem plików poradził sobie najlepiej z przetwarzaniem danych. Wybór najlepszego rozwiązania zależny jest od praktycznego zastosowania i to pod jego kątem należy rozpatrywać wyniki testów. Pewne systemy plików radzą sobie lepiej z odczytem danych (np. rodzina ext), a pewne z zapisem danych (np. ZFS, NTFS). W przypadku rozwiązania, ktore będzie wykonowało dużo operacji usuwania/tworzenia plików najlepszym rozwiązaniem byłby ZFS na systemie FreeBSD.
+            Na podstawie wykonanych testów nie można stwierdzić, który komputer z jakim systemem operacyjnym i systemem plików poradził sobie najlepiej z przetwarzaniem danych. Wybór najlepszego rozwiązania zależny jest od praktycznego zastosowania i to pod jego kątem należy rozpatrywać wyniki testów. Pewne systemy plików radzą sobie lepiej z odczytem danych (np. rodzina ext), a pewne z zapisem danych (np. ZFS, NTFS). W przypadku rozwiązania, które będzie wykonywało dużo operacji usuwania/tworzenia plików najlepszym rozwiązaniem byłby ZFS na systemie FreeBSD.
           </p>
         </div>
 
@@ -700,6 +700,7 @@
         </div>
 
       </div>
+    <h4 style="text-align: right">Autor: Adam Chyła</h4>
     </div>
   </body>
 </html>
