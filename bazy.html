@@ -28,8 +28,757 @@
 </ul>
 </div>
 <div id="main">
-<p>Do wypełnienia</p>
-<!-- Tu raporty -->
+
+<!-- spis tresci -->
+<div class="toc">
+<h1>Spis treści</h1>
+<ol>
+<li><a href="#sqlite">Sqlite</a>
+<ul class="ind">
+<li><a href="#sqlite_linux">Linux</a></li>
+<li><a href="#sqlite_win">Windows</a></li>
+<li><a href="#sqlite_bsd">FreeBSD</a></li>
+<li><a href="#sqlite_summ">Podsumowanie</a></li>
+</ul>
+</li>
+<li><a href="#mysql">MySQL</a>
+<li><a href="#pgsql">Postgres</a>
+<ul class="ind">
+<li><a href="#pgsql_siec">Zdalnie</a></li>
+<li><a href="#pgsql">Lokalnie</a></li>
+</ul>
+</li>
+<ol/>
+</div>
+<!-- tresc! -->
+<h2 id="sqlite">sqlite</h2>
+	  <h3>Wstęp</h3>
+	  <p>
+	    Test ten mierzył wydajność bazy danych <i>sqlite</i> na systemach operacyjnych Linux, FreeBSD i Windows.
+	  </p>
+	  <h3>Procedura testowa</h3>
+	  <p>
+	    Testy przeprowadzano programem Sqlite3. Test polegał na utworzeniu tabeli testowej, a następnie umieszczeniu w niej 500 rekordów. Test wykonany zostały trzy razy, mierzony był czas każdego powtórzenia.
+	  </p>
+	  <h3 id="sqlite_linux">Wynik dla systemu Linux</h3>
+	  <h4>Tabela - wyniki ogólne</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas działania (w sekundach)
+		</th>
+	      </tr>
+	      <tr>
+		<th>
+		  Średnia arytmetyczna
+		</th>
+		<td>
+		  26,316
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Odchylenie standardowe
+		</th>
+		<td>
+		  1,589
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość maksymalna
+		</th>
+		<td>
+		  28,875
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość minimalna
+		</th>
+		<td>
+		  22,776
+		</td>
+	      </tr>
+	    </table>
+	  <h4>Tabela - wyniki szczegółowe</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Średni czas wykonania (w sekundach)
+		</th>
+	      </tr>
+	      <tr>
+		<th>
+		 labc192
+		</th>
+		<td class="worst">
+		  27,472
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc193
+		</th>
+		<td>
+		  25,611
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		 labc194
+		</th>
+		<td>
+		  27,057
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc195
+		</th>
+		<td class="best">
+		 24,093
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc197
+		</th>
+		<td>
+		 -
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc198
+		</th>
+		<td>
+		 -
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc199
+		</th>
+		<td>
+		 27,349
+		</td>
+	      </tr>
+	    </table>
+	  <h3>Podsumowanie</h3>
+	  <p>
+	    Najlepiej z zadaniem poradził sobie komputer labc195 uzyskując czas 24,093s. Najgorzej poradził sobie komputer labc192 uzyskując czas 27,472s. Różnice te są jednak małe (niskie odchylenie standardowe) w związku z tym można przyjąć, że wszystkie komputery poradziły sobie z zadaniem równie dobrze.
+	  </p>
+	
+	  <h3 id="sqlite_win">Wynik dla systemu Windows</h3>
+	  <h4>Tabela - wyniki ogólne</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas działania (w sekundach)
+		</th>
+	      </tr>
+	      <tr>
+		<th>
+		  Średnia arytmetyczna
+		</th>
+		<td>
+		  2,670
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Odchylenie standardowe
+		</th>
+		<td>
+		  0,498
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość maksymalna
+		</th>
+		<td>
+		  7,866
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość minimalna
+		</th>
+		<td>
+		  1,393
+		</td>
+	      </tr>
+	    </table>
+	  <h4>Tabela - wyniki szczegółowe</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas działania (w sekundach)
+		</th>
+	      </tr>
+	      <tr>
+		<th>
+		 labc192
+		</th>
+		<td>
+		  2,360
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc193
+		</th>
+		<td>
+		  1,730
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		 labc194
+		</th>
+		<td>
+		  1,804
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc195
+		</th>
+		<td  class="best">
+		 1,484
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc197
+		</th>
+		<td>
+		 -
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc198
+		</th>
+		<td>
+		 -
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc199
+		</th>
+		<td  class="worst">
+		 5,975
+		</td>
+	      </tr>
+	    </table>
+	  <h3>Podsumowanie</h3>
+	  <p>
+	    Najlepiej z zadaniem poradził sobie komputer labc195 uzyskując czas 1,484s. Najgorzej poradził sobie komputer labc199 uzyskując czas 5,975s. Większość maszyn ma podobny czas działania. Wyjątkiem jest maszyna labc199, która na wykonanie polecenia potrzebowała trzy razy więcej czasu. Wpływ na to mogła mieć inna aplikacja korzystająca z dysku w tym samym czasie, w którym był wykonywany test.
+	  </p>
+	
+      <h3 id="sqlite_bsd">Wynik dla systemu FreeBSD</h3>
+	  <h4>Tabela - wyniki ogólne</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas działania (w sekundach)
+		</th>
+	      </tr>
+	      <tr>
+		<th>
+		  Średnia arytmetyczna
+		</th>
+		<td>
+		  0,409
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Odchylenie standardowe
+		</th>
+		<td>
+		 0,014
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość maksymalna
+		</th>
+		<td>
+		  0,576
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość minimalna
+		</th>
+		<td>
+		  0,246
+		</td>
+	      </tr>
+	    </table>
+	  <h4>Tabela - wyniki szczegółowe</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas działania (w sekundach)
+		</th>
+	      </tr>
+	      <tr>
+		<th>
+		 labc192
+		</th>
+		<td>
+		  0,271
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc193
+		</th>
+		<td>
+		  -
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		 labc194
+		</th>
+		<td>
+		 0,553
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc195
+		</th>
+		<td class="worst">
+		 0,563
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc197
+		</th>
+		<td>
+		 -
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc198
+		</th>
+		<td>
+		 -
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc199
+		</th>
+		<td class="best">
+		 0,248
+		</td>
+	      </tr>
+	    </table>
+	  <h3>Podsumowanie</h3>
+	  <p>
+	    Najlepiej z zadaniem poradził sobie komputer labc199 uzyskując czas 0,248s. Najgorzej poradził sobie komputer labc195 uzyskując czas 0,563s. Różnica między maszynami 192 i 199 a 194 i 195 jest prawie dwukrotna, jednak ogólny czas potrzebny na wykonanie testu jest bardzo mały (poniżej sekundy). Możliwe, że wynika to z tego, iż test był wykonywany na maszynie wirtualnej, w związku z tym wyniki mogą być niemiarodajne.
+	  </p>
+	  <h3 id="sqlite_summ">Podsumowanie kilku systemów</h3>
+	  <p>
+	    Poniżej zostały przedstawiony wykres średniego czasu kompresji w zależności od użytego systemu operacyjnego na danej maszynie.
+	  </p>
+	  <p class="charts">
+	    <img src="res/kodowanie/sqlite.jpg"/>
+	  </p>
+          <p>Jak widać najlepsze czasy kompresji uzyskano na systemie Linux. Zaraz za nim plasuje się system Windows. Najgorzej wypadł zaś system FreeBSD.</p>
+
+<h2 id="mysql">mysql</h2>
+	  <h3>Wstęp</h3>
+	  <p>
+	    Test ten pozwala zmierzyć wydajność bazy danych <i>MySQL</i>
+	  </p>
+	  <h3>Procedura testowa</h3>
+	  <p>
+	    Testy przeprowadzano programem <i>MySQL</i>. Mierzony był czas wykonania 2500 razy polecenia insert. Test powtórzono trzy razy.
+	  </p>
+	  <h3>Wynik dla systemu Linux</h3>
+	  <h4>Tabela - wyniki ogólne</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas działania (w sekundach)
+		</th>
+	      </tr>
+	      <tr>
+		<th>
+		  Średnia arytmetyczna
+		</th>
+		<td>
+		  95,121
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Odchylenie standardowe
+		</th>
+		<td>
+		  9,564
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość maksymalna
+		</th>
+		<td>
+		  128,867
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość minimalna
+		</th>
+		<td>
+		  80,516
+		</td>
+	      </tr>
+	    </table>
+	  <h4>Tabela - wyniki szczegółowe</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas działania (w sekundach)
+		</th>
+	      </tr>
+	      <tr>
+		<th>
+		 labc192
+		</th>
+		<td class="best">
+		  85,599
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc193
+		</th>
+		<td>
+		  94,530
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		 labc194
+		</th>
+		<td>
+		  89,008
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc195
+		</th>
+		<td  class="worst">
+		 103,677
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc197
+		</th>
+		<td>
+		 94,983
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc198
+		</th>
+		<td>
+		 100,362
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc199
+		</th>
+		<td>
+		 97,685
+		</td>
+	      </tr>
+	    </table>
+	  <h3>Podsumowanie</h3>
+	  <p>
+	    Najlepiej z zadaniem poradził sobie komputer labc192 uzyskując czas 85,599s. Najgorzej poradził sobie komputer labc195 uzyskując czas 103,677s. Średnie odchylenie standardowe wynosi 9,564s. jest to około 10% całego potrzebnego czasu na ukończenie polecenia.
+	  </p>
+	
+<h2 id="pgsql_siec">PgSQL - siec</h2>
+	  <h3>Wstęp</h3>
+	  <p>
+	    Test ten mierzył wydajność bazy danych <i>Postgres</i> na dalekiej maszynie.
+	  </p>
+	  <h3>Procedura testowa</h3>
+	  <p>
+	    Testy przeprowadzano programem <i>Postgres</i> na zewnętrznej maszynie. Testowano czas wykonania polecenia insert 1500 razy.
+	  </p>
+	  <h3>Wynik dla systemu Linux</h3>
+	  <h4>Tabela - wyniki ogólne</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas działania (w sekundach)
+		</th>
+	      </tr>
+	      <tr>
+		<th>
+		  Średnia arytmetyczna
+		</th>
+		<td>
+		  20,721
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Odchylenie standardowe
+		</th>
+		<td>
+		  2,778
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość maksymalna
+		</th>
+		<td>
+		  29,889
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość minimalna
+		</th>
+		<td>
+		  14,397
+		</td>
+	      </tr>
+	    </table>
+	  <h4>Tabela - wyniki szczegółowe</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas działania (w sekundach)
+		</th>
+	      </tr>
+	      <tr>
+		<th>
+		 labc192
+		</th>
+		<td class="worst">
+		  26,742
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc193
+		</th>
+		<td>
+		  14,732
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		 labc194
+		</th>
+		<td>
+		  -
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc195
+		</th>
+		<td>
+		 14,726
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc197
+		</th>
+		<td  class="best">
+		 6,011
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc198
+		</th>
+		<td>
+		 6,102
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc199
+		</th>
+		<td>
+		 26,686
+		</td>
+	      </tr>
+	    </table>
+	  <h3>Podsumowanie</h3>
+	  <p>
+	    Najlepiej z zadaniem poradził sobie komputer labc197 uzyskując czas 6.011s. Najgorzej poradził sobie komputer labc192 uzyskując czas 26,742s. Różnice między poszczególnymi maszynami są spore - może to wynikać z użycia łącza na maszynie docelowej.
+	  </p>
+<h2 id="pgsql">pgsql</h2>
+	  <h3>Wstęp</h3>
+	  <p>
+	    Test ten mierzył wydajność bazy danych <i>Postgres</i> na lokalnej maszynie.
+	  </p>
+	  <h3>Procedura testowa</h3>
+	  <p>
+	    Testy przeprowadzano programem <i>Postgres</i>. Liczono czas wykonania polecenia insert 1500 razy.
+	  </p>
+	  <h3 id="pgsql_linux">Wynik dla systemu Linux</h3>
+	  <h4>Tabela - wyniki ogólne</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas działania (w sekundach)
+		</th>
+	      </tr>
+	      <tr>
+		<th>
+		  Średnia arytmetyczna
+		</th>
+		<td>
+		  14,920
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Odchylenie standardowe
+		</th>
+		<td>
+		  0,253
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość maksymalna
+		</th>
+		<td>
+		  15,285
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  Wartość minimalna
+		</th>
+		<td>
+		 14,585
+		</td>
+	      </tr>
+	    </table>
+	  <h4>Tabela - wyniki szczegółowe</h4>
+	  <table>
+	      <tr>
+		<th>
+		</th>
+		<th>
+		  Czas działania (w sekundach)
+		</th>
+	      </tr>
+	      <tr>
+		<th>
+		 labc192
+		</th>
+		<td>
+		  14,833
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc193
+		</th>
+		<td class="worst">
+		  15,063
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		 labc194
+		</th>
+		<td class="best">
+		  1,426
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc195
+		</th>
+		<td>
+		 14,909
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc197
+		</th>
+		<td>
+		 -
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc198
+		</th>
+		<td>
+		 -
+		</td>
+	      </tr>
+	      <tr>
+		<th>
+		  labc199
+		</th>
+		<td>
+		 14,876
+		</td>
+	      </tr>
+	    </table>
+	  <h3>Podsumowanie</h3>
+	  <p>
+	    Najlepiej z zadaniem poradził sobie komputer labc194 uzyskując czas 1,426s. Najgorzej poradził sobie komputer labc193 uzyskując czas 15,063s. Wszystkie wyniki oprócz maszyny labc194 są zbliżone. Wynik maszyny labc194 wydaje się zbyt dobry jak na wykonanie tego polecenia - możliwe iż nie zostało ono wykonane poprawnie.
+	  </p>
+<h4 style="text-align: right">Autor: Krzysztof Rodzaj</h4>
+
 </div>
 </body>
 </html>
